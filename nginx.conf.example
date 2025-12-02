@@ -1,0 +1,62 @@
+# nginx 설정 파일 예시
+# 이 파일을 nginx 설정 디렉토리에 복사하거나 심볼릭 링크로 연결하세요
+
+server {
+    listen 80;
+    server_name your-domain.com www.your-domain.com;  # 실제 도메인으로 변경하세요
+
+    # 정적 파일은 nginx가 직접 서빙 (선택사항)
+    location / {
+        # Node.js 서버로 프록시
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+    # API 경로도 Node.js로 프록시
+    location /api/ {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+
+# HTTPS 설정 (SSL 인증서가 있는 경우)
+# server {
+#     listen 443 ssl;
+#     server_name your-domain.com www.your-domain.com;
+# 
+#     ssl_certificate /path/to/your/certificate.crt;
+#     ssl_certificate_key /path/to/your/private.key;
+# 
+#     location / {
+#         proxy_pass http://localhost:3000;
+#         proxy_http_version 1.1;
+#         proxy_set_header Upgrade $http_upgrade;
+#         proxy_set_header Connection 'upgrade';
+#         proxy_set_header Host $host;
+#         proxy_set_header X-Real-IP $remote_addr;
+#         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+#         proxy_set_header X-Forwarded-Proto $scheme;
+#         proxy_cache_bypass $http_upgrade;
+#     }
+# 
+#     location /api/ {
+#         proxy_pass http://localhost:3000;
+#         proxy_http_version 1.1;
+#         proxy_set_header Host $host;
+#         proxy_set_header X-Real-IP $remote_addr;
+#         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+#         proxy_set_header X-Forwarded-Proto $scheme;
+#     }
+# }
+

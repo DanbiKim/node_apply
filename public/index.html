@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>정보 입력</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 2rem;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        max-width: 320px;
+      }
+
+      label {
+        display: flex;
+        flex-direction: column;
+        font-weight: 600;
+      }
+
+      button {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      #result {
+        margin-top: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>간단한 정보 입력</h1>
+    <form id="infoForm">
+      <label>
+        이름
+        <input type="text" name="name" required />
+      </label>
+      <label>
+        생년월일
+        <input type="date" name="birthDate" required />
+      </label>
+      <button type="submit">저장</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+      const form = document.getElementById('infoForm');
+      const result = document.getElementById('result');
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const payload = Object.fromEntries(formData.entries());
+
+        try {
+          const res = await fetch('/api/info', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+          const data = await res.json();
+          result.textContent = data.message || '저장 완료';
+        } catch (error) {
+          result.textContent = '오류가 발생했습니다.';
+        }
+      });
+    </script>
+  </body>
+</html>
+
