@@ -45,4 +45,3 @@ npm start
 ## 요구사항
 
 - Node.js >= 18
-
