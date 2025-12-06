@@ -1,0 +1,373 @@
+<div class="sub join" id="profilePage">
+    <div class="container">
+        <div class="join-head">
+            <button type="button" class="btn-back" onclick="history.back()"></button>
+            <h1>프로필 입력</h1>
+            <button type="button" class="btn-next" onclick="profileValidation()">다음</button>
+            <div class="progress-bar">
+                <span style="width: 40%;"></span>
+            </div>
+        </div>
+        <div class="input-wrap text mt20" onclick="popOpenAndDim('area', true);">
+            <label for="">현재 거주지역</label>
+            <input type="text" name="_area" id="_area" placeholder="선택하세요" class="ta-r" readonly>
+            <i></i>
+
+            <input type="hidden" name="map_my" id="map_my" >
+            <input type="hidden" name="address_x" id="address_x" >
+            <input type="hidden" name="address_y" id="address_y" >
+        </div>
+
+        <!-- 직업 -->
+        <div class="input-wrap text mt10" onclick="popOpenAndDim('pop_job', true);">
+            <label for="">직업</label>
+            <input type="text" name="_job_detail" id="_job_detail" placeholder="선택하세요" class="ta-r" readonly>
+            <i></i>
+
+            <input type="hidden" name="job_detail" id="job_detail" >
+        </div>
+        <div class="popup" id="pop_job">
+            <p class="txt">당신의 직업을 선택해주세요</p>
+            <ul class="list col2 mt15 selectList">
+                <li data-nm="job_detail" data-value="student" onclick="popClose('pop_job');popOpenPass(this, 21);">학생</li>
+                <li data-nm="job_detail" data-value="technical" onclick="popClose('pop_job');popOpenPass(this, 21);">기술직</li>
+                <li data-nm="job_detail" data-value="soldier" onclick="popClose('pop_job');popOpenPass(this, 21);">군인</li>
+                <li data-nm="job_detail" data-value="athlete" onclick="popClose('pop_job');popOpenPass(this, 21);">운동선수</li>
+                <li data-nm="job_detail" data-value="free" onclick="popClose('pop_job');popOpenPass(this, 21);">프리랜서</li>
+                <li data-nm="job_detail" data-value="artist" onclick="popClose('pop_job');popOpenPass(this, 21);">예술인</li>
+                <li data-nm="job_detail" data-value="employee" onclick="popClose('pop_job');popOpenPass(this, 21);">회사원</li>
+                <li data-nm="job_detail" data-value="official" onclick="popClose('pop_job');popOpenPass(this, 21);">공무원</li>
+                <li data-nm="job_detail" data-value="public" onclick="popClose('pop_job');popOpenPass(this, 21);">공기업</li>
+                <li data-nm="job_detail" data-value="big" onclick="popClose('pop_job');popOpenPass(this, 21);">대기업</li>
+                <li data-nm="job_detail" data-value="self" onclick="popClose('pop_job');popOpenPass(this, 21);">자영업</li>
+                <li data-nm="job_detail" data-value="profession" onclick="popClose('pop_job');popOpenPass(this, 21);">전문직</li>
+                <li data-nm="job_detail" data-value="CEO" onclick="popClose('pop_job');popOpenPass(this, 21);">CEO</li>
+                <li data-nm="job_detail" data-value="sales" onclick="popClose('pop_job');popOpenPass(this, 21);">영업직</li>
+                <li data-nm="job_detail" data-value="etc" onclick="popClose('pop_job');popOpenPass(this, 21);">무직</li>
+            </ul>
+        </div>
+
+        <!-- 추가 사항 : 글씨 제한 걸기  -->
+        <div class="input-wrap text mt10" onclick="popOpenAndDim('jobDetail', true);">
+            <label for="">직업 추가 설명</label>
+            <input type="text" name="_job" id="_job" placeholder="입력하세요" class="ta-r" readonly>
+            <i></i>
+        </div>
+        <div class="popup" id="jobDetail">
+            <p class="txt mb15">당신의 직업에 대한 추가 소개를 해주세요</p>
+            <p class="ta-c font14 mt10 mb15 color-ff7600">
+                작성예시<br/>
+                저는 현재 ** 회사에서 ** 업무를 하고 있습니다.
+            </p>
+            <hr>
+            <div class="input-wrap textarea mt15">
+                <textarea name="job" id="job" maxlength="256"></textarea>
+            </div>
+            <button type="button" class="btn lg bg-ff7b99 mt15" onclick="textValidation('jobDetail', 'job');popOpenPass(this, 21);">확&nbsp;인</button>
+        </div>
+
+        <div class="input-wrap text mt10" onclick="popOpenAndDim('education', true);">
+            <label for="">학력</label>
+            <input type="text" name="_major" id="_major" placeholder="입력하세요" class="ta-r" readonly>
+            <i></i>
+        </div>
+        <div class="popup" id="education">
+            <p class="txt">당신의 학력에 대한 추가 소개를 해주세요</p>
+            <p class="ta-c font14 mt10 mb15 color-ff7600">
+                작성예시<br/>
+                고졸, OO대학교OO학과, OO대학 OO학과 대학원, OO학교 평생교육원 등
+            </p>
+            <hr>
+            <div class="input-wrap textarea mt15">
+                <textarea name="major" id="major"></textarea>
+            </div>
+            <button type="button" class="btn lg bg-ff7b99 mt15" onclick="textValidation('education','major');popOpenPass(this, 21);">확&nbsp;인</button>
+        </div>
+
+
+        <div class="input-wrap text mt10" onclick="popOpenAndDim('pop_hobby', true);">
+            <label for="">취미</label>
+            <input type="text" name="_hobby" id="_hobby" placeholder="입력하세요" class="ta-r" readonly>
+            <i></i>
+        </div>
+        <div class="popup" id="pop_hobby">
+            <p class="txt mb15">당신의 취미에 대해서 말씀해주세요.</p>
+            <hr>
+            <div class="input-wrap textarea mt15">
+                <textarea name="hobby" id="hobby"></textarea>
+            </div>
+            <button type="button" class="btn lg bg-ff7b99 mt15" onclick="textValidation('pop_hobby','hobby');popOpenPass(this, 21);">확&nbsp;인</button>
+        </div>
+
+        <hr class="mt15 mb15">
+        <div class="row">
+            <div class="col2">
+                <div class="input-wrap text" onclick="popOpenAndDim('characterType', true);">
+                    <input type="text" name="_characterType" id="_characterType" placeholder="이미지" class="ta-c" readonly>
+                    <i></i>
+
+                </div>
+                <div class="input-wrap text" onclick="popOpenAndDim('personality', true);">
+                    <input type="text" name="_personality" id="_personality" placeholder="성격" class="ta-c" readonly>
+                    <i></i>
+                </div>
+            </div>
+            <div class="col2 mt10">
+                <div class="input-wrap text" onClick="heightOpen();">
+                    <input type="text" name="user_height" id="user_height" placeholder="키" class="ta-c" readonly>
+                    <i></i>
+                </div>
+                <div class="input-wrap text" onclick="popOpenAndDim('bodyWoman', true);"><!-- 여자체형: bodyWoman, 남자체형: bodyMan -->
+                    <input type="text" name="_user_form" id="_user_form" placeholder="체형" class="ta-c" readonly>
+                    <i></i>
+
+                    <input type="hidden" name="user_form" id="user_form">
+                </div>
+            </div>
+            <div class="col2 mt10">
+                <div class="input-wrap text" onclick="popOpenAndDim('smoking', true);">
+                    <input type="text" name="_smoke" id="_smoke" placeholder="흡연" class="ta-c" readonly>
+                    <i></i>
+
+                    <input type="hidden" name="smoke" id="smoke">
+
+                </div>
+                <div class="input-wrap text" onclick="popOpenAndDim('drinking', true);">
+                    <input type="text" name="_drink" id="_drink" placeholder="음주" class="ta-c" readonly>
+                    <i></i>
+
+                    <input type="hidden" name="drink" id="drink">
+
+                </div>
+            </div>
+            <div class="col2 mt10">
+                <div class="input-wrap text" onclick="popOpenAndDim('pop_religion', true);">
+                    <input type="text" name="_religion" id="_religion" placeholder="종교" class="ta-c" readonly>
+                    <i></i>
+
+                    <input type="hidden" name="religion" id="religion">
+
+                </div>
+            </div>
+            <!-- s:남자용 -->
+            <div class="col2 mt10 m_view_data">
+                <div class="input-wrap text" onclick="popOpenAndDim('militaryWriting', true);">
+                    <input type="text" name="_army_yn" id="_army_yn" placeholder="군필 여부" class="ta-c" readonly>
+                    <i></i>
+
+                    <input type="hidden" name="army_yn" id="army_yn">
+
+                </div>
+                <div class="input-wrap text" onclick="popOpenAndDim('checkCar', true);">
+                    <input type="text" name="_car_yn" id="_car_yn" placeholder="자차 유무" class="ta-c" readonly>
+                    <i></i>
+
+                    <input type="hidden" name="car_yn" id="car_yn">
+
+                </div>
+            </div>
+            <!-- e:남자용 -->
+            <div class="col2 mt10">
+                <div class="input-wrap text" onclick="popOpenAndDim('checkDolsing', true);">
+                    <input type="text" name="_dolsing_yn" id="_dolsing_yn" placeholder="돌싱" class="ta-c" readonly>
+                    <i></i>
+                    <input type="hidden" name="dolsing_yn" id="dolsing_yn">
+                </div>
+                <div class="input-wrap text" onclick="popOpenAndDim('checkChildren', true);">
+                    <input type="text" name="_children_yn" id="_children_yn" placeholder="자녀" class="ta-c" readonly>
+                    <i></i>
+                    <input type="hidden" name="children_yn" id="children_yn">
+                </div>
+            </div>
+        </div>
+        <div class="input-wrap textarea mt10" onclick="popOpenAndDim('aboutMe', true);">
+            <textarea name="" id="" readonly></textarea>
+            <p class="txt-guide" id="mind_text">
+                소개팅 하고 싶은 상대방에게 <br/>어필할 자기소개를 입력해 주세요
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- popup -->
+<div class="popup" id="checkDolsing">
+    <p class="txt">
+    <span>돌싱 이신가요?</span><br/>
+    <span class="color-ff7b99">담당 매니저님께 전달드려 보다 좋은</span><br/>
+    <span class="color-ff7b99">인연을 찾기 위해 노력하겠습니다 :)</span>
+    </p>
+    <ul class="list mt15 selectList">
+        <li data-nm="dolsing_yn" data-value="Y" onclick="popClose('checkDolsing');popOpenPass(this, 21);">네</li>
+        <li data-nm="dolsing_yn" data-value="N" onclick="popClose('checkDolsing');popOpenPass(this, 21);">아니오</li>
+    </ul>
+</div>
+<div class="popup" id="checkChildren">
+    <p class="txt">
+    <span>자녀분이 있으신가요?</span><br/>
+    <span class="color-ff7b99">담당 매니저님께 전달드려 보다 좋은</span><br/>
+    <span class="color-ff7b99">인연을 찾기 위해 노력하겠습니다 :)</span>
+    </p>
+    <ul class="list mt15 selectList">
+        <li data-nm="children_yn" data-value="Y" onclick="popClose('checkChildren');popOpenPass(this, 21);">네</li>
+        <li data-nm="children_yn" data-value="N" onclick="popClose('checkChildren');popOpenPass(this, 21);">아니오</li>
+    </ul>
+</div>
+
+<div class="popup" id="characterType">
+    <p class="txt">자신의 이미지를 선택해 주세요. <br/>
+        (최대 2개)</p>
+    <ul class="list col2 mt15 arrayList f_view_data" data-max="2" data-next="personality">
+        <li><input type="checkbox" name="feel_user[]" id="face_f_A" value="A">귀여운 스타일</li>
+        <li><input type="checkbox" name="feel_user[]" id="face_f_B" value="B">청순한 스타일</li>
+        <li><input type="checkbox" name="feel_user[]" id="face_f_C" value="C">섹시한 스타일</li>
+        <li><input type="checkbox" name="feel_user[]" id="face_f_D" value="D">도도한 스타일</li>
+    </ul>
+    <ul class="list col2 mt15 arrayList m_view_data" data-max="2" data-next="personality">
+        <li><input type="checkbox" name="feel_user[]" id="face_m_A" value="A">착하고 선한 스타일<br></li>
+        <li><input type="checkbox" name="feel_user[]" id="face_m_B" value="B">귀여운 스타일<br></li>
+        <li><input type="checkbox" name="feel_user[]" id="face_m_C" value="C">이쁘장한 스타일<br></li>
+        <li><input type="checkbox" name="feel_user[]" id="face_m_D" value="D">지적인 스타일<br></li>
+        <li><input type="checkbox" name="feel_user[]" id="face_m_E" value="E">남자다운 스타일<br></li>
+        <li><input type="checkbox" name="feel_user[]" id="face_m_F" value="F">듬직한 스타일<br></li>
+        <li><input type="checkbox" name="feel_user[]" id="face_m_G" value="G">장난끼 있는 스타일<br></li>
+        <li><input type="checkbox" name="feel_user[]" id="face_m_H" value="H">시크한 스타일<br></li>
+    </ul>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('characterType');popOpenPass(this, 21);">확&nbsp;인</button>
+</div>
+
+<div class="popup" id="personality">
+    <p class="txt">자신의 성격을 선택해 주세요. <br/>
+        (최대 2개)</p>
+    <ul class="list col2 mt15 arrayList" data-max="2"  data-next="userHeight">
+        <!-- 동적으로 채워짐 (charmList) -->
+    </ul>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onClick="popClose('personality');popOpenPass(this, 21);">확&nbsp;인</button>
+</div>
+
+<div class="popup" id="userHeight">
+    <p class="txt">당신의 키를 선택해주세요</p>
+    <ul class="mt15 selectList" id="userHeightList">
+        <!-- JavaScript로 동적 생성 (100-200) -->
+    </ul>
+</div>
+
+<div class="popup" id="bodyWoman">
+    <p class="txt">당신의 체형을 선택해주세요</p>
+    <ul class="list mt15 selectList f_view_data">
+        <li data-nm="user_form" data-value="A" onclick="popClose('bodyWoman');popOpenPass(this, 21);">슬림</li>
+        <li data-nm="user_form" data-value="B" onclick="popClose('bodyWoman');popOpenPass(this, 21);">보통</li>
+        <li data-nm="user_form" data-value="C" onclick="popClose('bodyWoman');popOpenPass(this, 21);">다소볼륨</li>
+        <li data-nm="user_form" data-value="D" onclick="popClose('bodyWoman');popOpenPass(this, 21);">글래머</li>
+        <li data-nm="user_form" data-value="E" onclick="popClose('bodyWoman');popOpenPass(this, 21);">통통</li>
+    </ul>
+
+    <ul class="list mt15 selectList m_view_data">
+        <li data-nm="user_form" data-value="A" onclick="popClose('bodyWoman');popOpenPass(this, 21);">슬림</li>
+        <li data-nm="user_form" data-value="B" onclick="popClose('bodyWoman');popOpenPass(this, 21);">보통</li>
+        <li data-nm="user_form" data-value="C" onclick="popClose('bodyWoman');popOpenPass(this, 21);">근육질</li>
+        <li data-nm="user_form" data-value="D" onclick="popClose('bodyWoman');popOpenPass(this, 21);">통통</li>
+        <li data-nm="user_form" data-value="E" onclick="popClose('bodyWoman');popOpenPass(this, 21);">우람</li>
+    </ul>
+
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('bodyWoman');popOpenPass(this, 21)">확&nbsp;인</button>
+</div>
+
+<div class="popup" id="smoking">
+    <p class="txt">당신의 흡연여부는?</p>
+    <ul class="list mt15 selectList">
+        <li data-nm="smoke" data-value="S" onclick="popClose('smoking');popOpenPass(this, 21);">가끔</li>
+        <li data-nm="smoke" data-value="Y" onclick="popClose('smoking');popOpenPass(this, 21);">자주</li>
+        <li data-nm="smoke" data-value="N" onclick="popClose('smoking');popOpenPass(this, 21);">전혀 안함</li>
+    </ul>
+</div>
+
+<div class="popup" id="drinking">
+    <p class="txt">당신의 음주여부는?</p>
+    <ul class="list mt15 selectList">
+        <li data-nm="drink" data-value="S" onclick="popClose('drinking');popOpenPass(this, 21);">즐기는 편이에요</li>
+        <li data-nm="drink" data-value="Y" onclick="popClose('drinking');popOpenPass(this, 21);">가끔씩 먹어요</li>
+        <li data-nm="drink" data-value="N" onclick="popClose('drinking');popOpenPass(this, 21);">아예 안먹어요</li>
+    </ul>
+</div>
+
+<div class="popup" id="pop_religion">
+    <p class="txt">당신의 종교여부는?</p>
+    <ul class="list mt15 selectList">
+        <li data-nm="religion" data-value="catholic" onclick="religionValidation(this);">천주교</li>
+        <li data-nm="religion" data-value="christian" onclick="religionValidation(this);">기독교</li>
+        <li data-nm="religion" data-value="buddhism" onclick="religionValidation(this);">불교</li>
+        <li data-nm="religion" data-value="not" onclick="religionValidation(this);">무교</li>
+        <li data-nm="religion" data-value="etc" onclick="religionValidation(this);">기타</li>
+    </ul>
+</div>
+
+<div class="popup" id="aboutMe">
+    <p class="txt mb10">당신의 <span class="color-ff7b99">연애관</span> 또는 <span class="color-ff7b99">자기소개</span>에 대해서 말씀해주세요.</p>
+    <p class="ta-c font14 mb15 color-ff7600">
+        글을 정성스레 적어주실 수록 연결될 확률이 올라갑니다 !
+    </p>
+    <hr>
+    <div class="input-wrap textarea mt15">
+        <textarea name="mind" id="mind" maxlength="1000" placeholder="자기소개 예시 : 평범하지만 내 사람에겐 특별한 사람입니다. 삼성 다니다가 지금은 강사로 일하고 있구요. 기댈 수 있는 듬직한 스타일 좋아하시면 잘 맞을 거 같아요. 항상 상대방을 배려하고 편안하게 해주려고 노력합니다. 잘 웃고 유쾌한 성격이고 맛집이나 공연 보고 운동하는 걸 좋아하구요. 집에 있을 때는 드라마나 예능 보면서 쉬는 걸 좋아해요 ㅎㅎ 가벼운 만남보다는 진심이 통하는 이야기 공유하는 사이가 되었음 합니다 :)"></textarea>
+    </div>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="textValidation('aboutMe','mind');">확&nbsp;인</button>
+</div>
+<div class="popup" id="militaryWriting">
+    <p class="txt">당신의 군필 여부는?</p>
+    <ul class="list mt15 selectList">
+        <li data-nm="army_yn" data-value="N" onclick="popClose('militaryWriting');popOpenPass(this, 21);">미필</li>
+        <li data-nm="army_yn" data-value="Y" onclick="popClose('militaryWriting');popOpenPass(this, 21);">군필</li>
+    </ul>
+</div>
+<div class="popup" id="checkCar">
+    <p class="txt">당신의 자차 소유 유무는?</p>
+    <ul class="list mt15 selectList">
+        <li data-nm="car_yn" data-value="Y" onclick="popClose('checkCar');popOpenPass(this, 21);">소유</li>
+        <li data-nm="car_yn" data-value="N" onclick="popClose('checkCar');popOpenPass(this, 21);">미소유</li>
+    </ul>
+</div>
+
+<div class="popup" id="marital">
+    <p class="txt">당신의 결혼 여부는?</p>
+    <p class="color-ff7600 ta-c">유부남/유부녀는 가입할 수 없어요!</p>
+    <ul class="list mt15">
+        <li class="on" onclick="popClose('marital');">미혼</li>
+        <li onclick="popClose('marital');">이혼 - 자녀 없음</li>
+        <li onclick="popClose('marital');">이혼 - 자녀 있음</li>
+    </ul>
+</div>
+
+<div class="popup" id="area">
+    <p class="txt mt15">현재 당신의 거주지역은?</p>
+    <ul class="list col2 mt25 selectList">
+        <li onclick="popClose('area'); popOpenAndDim('areaSeoul', true);">서울</li>
+        <li onclick="popClose('area'); popOpenAndDim('areaIncheon', true);">인천</li>
+        <li onclick="popClose('area'); popOpenAndDim('areaDaegu', true);">대구</li>
+        <li onclick="popClose('area'); popOpenAndDim('areaBusan', true);">부산</li>
+        <li onclick="popClose('area'); popOpenAndDim('areaDaejeon', true);">대전</li>
+        <li onclick="popClose('area'); popOpenAndDim('areaUlsan', true);">울산</li>
+        <li onclick="popClose('area'); popOpenAndDim('areaGwangju', true);">광주</li>
+        <li onclick="popClose('area'); popOpenAndDim('areaJeju', true);">제주</li>
+        <li onclick="popClose('area'); popOpenAndDim('areaGyeonggy', true);">경기도</li>
+        <li onclick="popClose('area'); popOpenAndDim('areaGangwon', true);">강원도</li>
+        <li onclick="popClose('area'); popOpenAndDim('areaChungcheongbuk', true);">충청북도</li>
+        <li onclick="popClose('area'); popOpenAndDim('areaChungcheongnam', true);">충청남도</li>
+        <li onclick="popClose('area'); popOpenAndDim('areaGyeongsangbuk', true);">경상북도</li>
+        <li onclick="popClose('area'); popOpenAndDim('areaGyeongsangnam', true);">경상남도</li>
+        <li onclick="popClose('area'); popOpenAndDim('areaJeollabuk', true);">전라북도</li>
+        <li onclick="popClose('area'); popOpenAndDim('areaJeollanam', true);">전라남도</li>
+    </ul>
+</div>
+
+<!-- 지역 팝업들은 별도 파일로 분리하거나, 기존 profile.php의 지역 부분을 그대로 사용 -->
+<!-- 지역 팝업 HTML은 매우 길어서 별도 파일(area-popups.html)로 분리 권장 -->
+
+<script>
+// 키 리스트 동적 생성 (100-200)
+$(document).ready(function() {
+    for (let i = 100; i <= 200; i++) {
+        $('#userHeightList').append('<li data-nm="user_height" data-value="' + i + '" onclick="popClose(\'userHeight\');popOpenPass(this, 21);">' + i + '</li>');
+    }
+});
+</script>
+

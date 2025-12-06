@@ -30,3 +30,7 @@ pids/
 *.seed
 *.pid.lock
 
+# Uploads
+public/uploads/
+!public/uploads/.gitkeep
+

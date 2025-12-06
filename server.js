@@ -1,86 +1,107 @@
-const http = require('http');
-const fs = require('fs');
+const express = require('express');
 const path = require('path');
+const cors = require('cors');
+const helmet = require('helmet');
+const config = require('./config/config');
+const { testConnection } = require('./utils/db');
+const apiRoutes = require('./routes/api');
 
-const PORT = process.env.PORT || 3000;
+const app = express();
 
-const submissions = [];
+// 보안 미들웨어 - CSP 설정 완화 (inline script 및 이벤트 핸들러 허용)
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'"],
+      scriptSrcAttr: ["'unsafe-inline'"], // 인라인 이벤트 핸들러 허용 (onclick 등)
+      styleSrc: ["'self'", "'unsafe-inline'", "https:"],
+      imgSrc: ["'self'", "data:", "https:"],
+      fontSrc: ["'self'", "data:", "https:"],
+    },
+  },
+}));
 
-const sendJSON = (res, statusCode, payload) => {
-  res.writeHead(statusCode, { 'Content-Type': 'application/json; charset=utf-8' });
-  res.end(JSON.stringify(payload));
-};
+// CORS 설정
+app.use(cors());
 
-const parseBody = async (req) => {
-  const chunks = [];
-  for await (const chunk of req) {
-    chunks.push(chunk);
+// Body 파서
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// 정적 파일 서빙
+app.use('/apply/web', express.static(path.join(__dirname, 'public', 'apply', 'web')));
+app.use('/web', express.static(path.join(__dirname, 'public', 'apply', 'web'))); // 추가 경로 지원
+app.use('/uploads', express.static(path.join(__dirname, 'public', 'uploads')));
+
+// API 라우트
+app.use('/api', apiRoutes);
+
+// apply 폴더의 HTML 파일들 서빙 (register.html 제외)
+app.get('/apply/:filename', (req, res) => {
+  const filename = req.params.filename;
+  if (filename === 'register.html' || filename === 'register') {
+    // register.html은 아래에서 처리
+    return res.status(404).send('Not found');
   }
-  const raw = Buffer.concat(chunks).toString();
-  if (!raw) return {};
-
-  const contentType = req.headers['content-type'] || '';
-  if (contentType.includes('application/json')) {
-    return JSON.parse(raw);
-  }
-
-  if (contentType.includes('application/x-www-form-urlencoded')) {
-    const params = new URLSearchParams(raw);
-    return Object.fromEntries(params.entries());
-  }
-
-  return {};
-};
-
-const FORM_PATH = path.join(__dirname, 'public', 'index.html');
-
-const serveForm = (res) => {
-  fs.readFile(FORM_PATH, (err, content) => {
-    if (err) {
-      console.error('Failed to read form file', err);
-      res.writeHead(500, { 'Content-Type': 'text/plain; charset=utf-8' });
-      res.end('폼 파일을 불러올 수 없습니다.');
-      return;
-    }
-
-    res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-    res.end(content);
-  });
-};
-
-const server = http.createServer(async (req, res) => {
-  if (req.method === 'GET' && req.url === '/health') {
-    sendJSON(res, 200, { status: 'ok' });
-    return;
-  }
-
-  if (req.method === 'GET' && req.url === '/') {
-    serveForm(res);
-    return;
-  }
-
-  if (req.method === 'POST' && req.url === '/api/info') {
-    try {
-      const { name, birthDate } = await parseBody(req);
-      if (!name || !birthDate) {
-        sendJSON(res, 400, { message: '이름과 생년월일을 모두 입력해주세요.' });
-        return;
+  if (filename.endsWith('.html')) {
+    const filePath = path.join(__dirname, 'public', 'apply', filename);
+    res.sendFile(filePath, (err) => {
+      if (err) {
+        console.error('Error sending file:', err);
+        res.status(404).send('File not found');
       }
-
-      submissions.push({ name, birthDate, receivedAt: new Date().toISOString() });
-      sendJSON(res, 200, { message: `${name}님의 정보가 임시로 저장되었습니다.`, data: { name, birthDate } });
-    } catch (error) {
-      console.error('Failed to parse request', error);
-      sendJSON(res, 500, { message: '요청 처리 중 오류가 발생했습니다.' });
-    }
-    return;
+    });
+  } else {
+    res.status(404).send('Not found');
   }
-
-  res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
-  res.end('요청하신 페이지를 찾을 수 없습니다.');
 });
 
-server.listen(PORT, () => {
-  console.log(`Server listening on http://localhost:${PORT}`);
+// 가입 페이지 서빙 (마지막에 배치하여 다른 라우트와 충돌 방지)
+app.get('/apply', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'apply', 'register.html'));
 });
 
+// 기존 홈 페이지
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// Health check
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok' });
+});
+
+// 404 핸들러
+app.use((req, res) => {
+  res.status(404).json({ message: '요청하신 페이지를 찾을 수 없습니다.' });
+});
+
+// 에러 핸들러
+app.use((err, req, res, next) => {
+  console.error('Error:', err);
+  res.status(err.status || 500).json({
+    success: false,
+    message: err.message || '서버 오류가 발생했습니다.'
+  });
+});
+
+// 서버 시작
+async function startServer() {
+  // DB 연결 테스트
+  const dbConnected = await testConnection();
+  
+  if (!dbConnected) {
+    console.warn('⚠️  Database connection failed. Some features may not work.');
+  }
+  
+  app.listen(config.port, () => {
+    console.log(`🚀 Server listening on http://localhost:${config.port}`);
+    console.log(`📝 Apply page: http://localhost:${config.port}/apply`);
+    console.log(`🔍 Health check: http://localhost:${config.port}/health`);
+  });
+}
+
+startServer();
+
+module.exports = app;

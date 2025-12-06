@@ -1,0 +1,256 @@
+<div class="sub join" id="conditionPage">
+    <div class="container">
+        <div class="join-head">
+            <button type="button" class="btn-back" onclick="history.back()"></button>
+            <h1>소개팅 조건 설정</h1>
+            <button type="button" class="btn-next" onclick="conditionValidation()">다음</button>
+            <div class="progress-bar">
+                <span style="width: 80%;"></span>
+            </div>
+        </div>
+        <div class="tit-wrap mt25"><p>기본 설정<span class="color-ff7b99">(필수)</span></p></div>
+        <hr class="mt15">
+        <div class="input-wrap text mt15" onclick="popOpenAndDim('look', true);">
+            <label for="">상대방 외모</label>
+            <input type="text" name="_look" id="_look" placeholder="선택하세요" class="ta-r" readonly>
+            <i></i>
+        </div>
+        <div class="input-wrap text mt10" onclick="popOpenAndDim('idearAge', true);">
+            <label for="">상대방 나이</label>
+            <input type="text" name="_ideal_age" id="_ideal_age" placeholder="선택하세요" class="ta-r" readonly>
+            <i></i>
+
+            <input type="hidden" name="ideal_age_1" id="ideal_age_1" >
+            <input type="hidden" name="ideal_age_2" id="ideal_age_2" >
+
+        </div>
+        <div class="input-wrap text mt10" onclick="popOpenAndDim('idearHeight', true);">
+            <label for="">상대방 키</label>
+            <input type="text" name="_ideal_height" id="_ideal_height" placeholder="선택하세요" class="ta-r" readonly>
+            <i></i>
+
+            <input type="hidden" name="ideal_height_1" id="ideal_height_1" >
+            <input type="hidden" name="ideal_height_2" id="ideal_height_2" >
+
+        </div>
+        <div class="input-wrap text mt10" onclick="popOpenAndDim('opponentSmoking', true);">
+            <label for="">상대방 흡연 여부</label>
+            <input type="text" name="_ideal_smoke" id="_ideal_smoke" placeholder="선택하세요" class="ta-r">
+            <i></i>
+
+            <input type="hidden" name="ideal_smoke" id="ideal_smoke" >
+        </div>
+        <div class="input-wrap text mt10" onclick="popOpenAndDim('opponentDrinking', true);">
+            <label for="">상대방 음주 여부</label>
+            <input type="text" name="_ideal_drink" id="_ideal_drink" placeholder="선택하세요" class="ta-r">
+            <i></i>
+            
+            <input type="hidden" name="ideal_drink" id="ideal_drink" >
+        </div>
+        <div class="tit-wrap mt35"><p>소개팅 방식 설정<span class="color-ff7b99">(필수)</span></p></div>
+        <hr class="mt15">
+        <div class="input-wrap text mt15" onclick="popOpenAndDim('meetType', true);">
+            <label for="">소개팅 이후 만남일정</label>
+            <input type="text" name="_call_type" id="_call_type" placeholder="선택하세요" class="ta-r">
+            <i></i>
+
+            <input type="hidden" name="call_type" id="call_type" >
+        </div>
+        <div class="input-wrap text mt15 f_view_data" onclick="popOpenAndDim('profileAlarm', true);">
+            <label for="">소개팅 방식 - 프로필 활용 동의</label>
+            <input type="text" name="_profile_YN" id="_profile_YN" placeholder="선택하세요" class="ta-r" readonly>
+            <i></i>
+
+            <input type="hidden" name="profile_YN" id="profile_YN" >
+        </div>
+        <div class="tit-wrap mt35"><p>소개팅 조건 우선순위 설정<span class="color-ff7b99">(필수)</span></p></div>
+        <hr class="mt15">
+        <div class="input-wrap text mt15" onclick="popOpenAndDim('reasonCondition', true);">
+            <label for="">소개팅 조건 우선순위</label>
+            <input type="text" name="_reasonCondition" id="_reasonCondition" placeholder="선택하세요" class="ta-r" readonly>
+            <i></i>
+        </div>
+        <div class="tit-wrap mt35">
+            <p>담당 매니저님께 요청할 사항<span class="color-b9b9b9">(선택)</span></p>
+        </div>
+        <hr class="mt15">
+        <div class="input-wrap textarea mt10" onclick="popOpenAndDim('coment', true);">
+            <textarea name="" id="" readonly></textarea>
+            <p class="txt-guide" id="ideal_first_add_text">
+                
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- popup -->
+<div class="popup" id="idearAge">
+    <p class="txt mb15">소개팅하고 싶은 <br/>
+        이성의 나이를 설정해 주세요.</p>
+    <hr>
+    <div class="start">
+        <div style="font-weight: 700; border-bottom: 3px solid; width: 40%; display: inline-block; color: gray;">최소</div>
+        <ul class="mt15 selectList" id="ideal_age_1_list">
+            <!-- JavaScript로 동적 생성 -->
+        </ul>
+    </div>
+    <div class="end">
+        <div style="font-weight: 700; border-bottom: 3px solid; width: 40%; display: inline-block; color: gray;">최대</div>
+        <ul class="mt15 selectList" id="ideal_age_2_list">
+            <!-- JavaScript로 동적 생성 -->
+        </ul>
+    </div>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="idearAgeValidation(this)">확&nbsp;인</button>
+</div>
+
+<div class="popup" id="idearHeight">
+    <p class="txt mb15">소개팅하고 싶은 <br/>
+        이성의 키를 설정해 주세요.</p>
+    <hr>
+    <div class="start">
+        <div style="font-weight: 700; border-bottom: 3px solid; width: 40%; display: inline-block; color: gray;">최소</div>
+        <ul class="mt15 selectList" id="ideal_height_1_list">
+            <!-- JavaScript로 동적 생성 -->
+        </ul>
+    </div>
+    <div class="end">
+        <div style="font-weight: 700; border-bottom: 3px solid; width: 40%; display: inline-block; color: gray;">최대</div>
+        <ul class="mt15 selectList" id="ideal_height_2_list">
+            <!-- JavaScript로 동적 생성 -->
+        </ul>
+    </div>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="idearHeightValidation(this);">확&nbsp;인</button>
+</div>
+
+<div class="popup" id="reasonCondition">
+    <p class="txt">원하는 상대의 조건을 선택해주세요 <br>
+        (최대 3개)</p>
+    <ul class="list col2 mt15 arrayList" data-max="3" data-next="coment">
+        <li><input type="checkbox" name="ideal_first[]" id="ideal_first" value="height">키</li>
+        <li><input type="checkbox" name="ideal_first[]" id="ideal_first" value="age">나이</li>
+        <li><input type="checkbox" name="ideal_first[]" id="ideal_first" value="smoke">흡연여부</li>
+        <li><input type="checkbox" name="ideal_first[]" id="ideal_first" value="drink">음주여부</li>
+        <li><input type="checkbox" name="ideal_first[]" id="ideal_first" value="form">체형</li>
+        <li><input type="checkbox" name="ideal_first[]" id="ideal_first" value="job">직업</li>
+        <li><input type="checkbox" name="ideal_first[]" id="ideal_first" value="distance">거리</li>
+        <li><input type="checkbox" name="ideal_first[]" id="ideal_first" value="religion">종교</li>
+        <li><input type="checkbox" name="ideal_first[]" id="ideal_first" value="style">스타일</li>
+        <li><input type="checkbox" name="ideal_first[]" id="ideal_first" value="major">학벌</li>
+        <li><input type="checkbox" name="ideal_first[]" id="ideal_first" value="mind">성격</li>
+    </ul>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('reasonCondition');popOpenPass(this, 30);">확&nbsp;인</button>
+</div>
+
+<div class="popup" id="look">
+    <p class="txt">소개팅할 이성의 이미지를 선택해주세요.<br/>
+        (최대 2개)</p>
+    <ul class="list col2 mt15 arrayList m_view_data" data-max="2" data-next="idearAge">
+        <li><input type="checkbox" name="feel_ideal[]" id="i_face_f_A" value="A">귀여운 스타일</li>
+        <li><input type="checkbox" name="feel_ideal[]" id="i_face_f_B" value="B">청순한 스타일</li>
+        <li><input type="checkbox" name="feel_ideal[]" id="i_face_f_C" value="C">섹시한 스타일</li>
+        <li><input type="checkbox" name="feel_ideal[]" id="i_face_f_D" value="D">도도한 스타일</li>
+    </ul>
+    <ul class="list col2 mt15 arrayList f_view_data" data-max="2" data-next="idearAge">
+        <li><input type="checkbox" name="feel_ideal[]" id="i_face_m_A" value="A">착하고 선한 스타일<br></li>
+        <li><input type="checkbox" name="feel_ideal[]" id="i_face_m_B" value="B">귀여운 스타일<br></li>
+        <li><input type="checkbox" name="feel_ideal[]" id="i_face_m_C" value="C">이쁘장한 스타일<br></li>
+        <li><input type="checkbox" name="feel_ideal[]" id="i_face_m_D" value="D">지적인 스타일<br></li>
+        <li><input type="checkbox" name="feel_ideal[]" id="i_face_m_E" value="E">남자다운 스타일<br></li>
+        <li><input type="checkbox" name="feel_ideal[]" id="i_face_m_F" value="F">듬직한 스타일<br></li>
+        <li><input type="checkbox" name="feel_ideal[]" id="i_face_m_G" value="G">장난끼 있는 스타일<br></li>
+        <li><input type="checkbox" name="feel_ideal[]" id="i_face_m_H" value="H">시크한 스타일<br></li>
+    </ul>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('look');popOpenPass(this, 30);">확&nbsp;인</button>
+</div>
+
+<div class="popup" id="opponentSmoking">
+    <p class="txt">소개팅하고 싶은 이성의 흡연여부를 설정해주세요.</p>
+    <ul class="list mt15 selectList">
+        <li data-nm="ideal_smoke" data-value="-" onclick="popClose('opponentSmoking');popOpenPass(this, 30);">상관없음</li>
+        <li data-nm="ideal_smoke" data-value="N" onclick="popClose('opponentSmoking');popOpenPass(this, 30);">비흡연</li>
+        <li data-nm="ideal_smoke" data-value="S" onclick="popClose('opponentSmoking');popOpenPass(this, 30);">가끔 흡연</li>
+        <li data-nm="ideal_smoke" data-value="Y" onclick="popClose('opponentSmoking');popOpenPass(this, 30);">자주 흡연</li>
+    </ul>
+</div>
+
+<div class="popup" id="opponentDrinking">
+    <p class="txt">소개팅하고 싶은 이성의 음주여부를 설정해주세요.</p>
+    <ul class="list mt15 selectList">
+        <li data-nm="ideal_drink" data-value="-" onclick="popClose('opponentDrinking');popOpenPass(this, 30);">상관없음</li>
+        <li data-nm="ideal_drink" data-value="N" onclick="popClose('opponentDrinking');popOpenPass(this, 30);">음주안함</li>
+        <li data-nm="ideal_drink" data-value="S" onclick="popClose('opponentDrinking');popOpenPass(this, 30);">가끔</li>
+        <li data-nm="ideal_drink" data-value="Y" onclick="popClose('opponentDrinking');popOpenPass(this, 30);">자주</li>
+    </ul>
+</div>
+
+<div class="popup" id="meetType">
+    <p class="txt">매칭 이후에 <br/>
+        어떻게 만남을 갖고 싶은지 선택하세요.</p>
+    <ul class="list mt15 selectList">
+        <li data-nm="call_type" data-value="enjoy" onclick="callTypeValidation(this);">첫 만남전에 <br/>
+            <span class="color-ff7b99">연락을 자주해서 친해진 다음</span>에 <br/>
+            만나는 것을 선호해요</li>
+        <li data-nm="call_type" data-value="some" onclick="callTypeValidation(this);">첫 만남전에 <br/>
+            <span class="color-ff7b99">간단한 연락</span>만 하고 만났을때 <br/>
+            서로 알아가는 것을 선호해요</li>
+        <li data-nm="call_type" data-value="not" onclick="callTypeValidation(this);">첫 만남전에 <br/>
+            <span class="color-ff7b99">안부인사만 하고 </span><br/>
+            바로 약속 잡는것을 선호해요</li>
+    </ul>
+</div>
+
+<div class="popup" id="profileAlarm">
+    <p class="txt">본인이 원하는 이성뿐 아니라 본인을 마음에 들어하는 이성의 프로필도 받아 보시겠어요?</p>
+    <ul class="list mt15 selectList">
+        <li data-nm="profile_YN" data-value="Y" onclick="popClose('profileAlarm');popOpenAndDim('reasonCondition', true);">네 <br/>
+            <span class="color-ff7b99">나를 마음에 들어하는 이성도</span> <br/>찾아주세요</li>
+        <li data-nm="profile_YN" data-value="N" onclick="popClose('profileAlarm');popOpenAndDim('reasonCondition', true);">아니요 <br/>
+            <span class="color-ff7b99">내가 먼저 이성을 선택하는 방식만</span> <br/>할게요</li>
+    </ul>
+</div>
+
+<div class="popup" id="profileMessage">
+    <p class="txt">문자로도 여성분 프로필을 받아보시겠어요?</p>
+    <ul class="list mt15">
+        <li class="on" onclick="popClose('profileMessage');">네 <br/>
+            <span class="color-ff7b99">문자로도 여성분 프로필</span> <br/>보내주세요</li>
+        <li onclick="popClose('profileMessage');">아니요 <br/>
+            <span class="color-ff7b99">문자는 받이 않을래요</span></li>
+    </ul>
+</div>
+
+<div class="popup" id="coment">
+    <p class="txt">담당매니저님께 <br/>
+        소개팅하고 싶은 상대의 조건에 대해 <br/>
+        더 말씀하실 부분이 있으시면 말씀해 주세요.</p>
+    <p class="color-ff7600 mt10 mb15 ta-c">자세히 말씀해 주실수록 매니저님이 좋은 인연을 찾아주실 확률이 높아져요!</p>
+    <hr>
+    <div class="input-wrap textarea mt15">
+        <textarea name="ideal_first_add" id="ideal_first_add"></textarea>
+    </div>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="textValidation('coment','ideal_first_add');">확&nbsp;인</button>
+</div>
+
+<div class="popup" id="checkValue">
+    <p class="txt mt15 mb15">값 설정이 잘 못 되었습니다.</p>
+    <hr>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('checkValue');">확&nbsp;인</button>
+</div>
+
+<script>
+// 나이/키 리스트 동적 생성
+$(document).ready(function() {
+    // 나이 리스트 (20-55)
+    for (let i = 20; i <= 55; i++) {
+        $('#ideal_age_1_list').append('<li data-nm="ideal_age_1" data-value="' + i + '">' + i + '</li>');
+        $('#ideal_age_2_list').append('<li data-nm="ideal_age_2" data-value="' + i + '">' + i + '</li>');
+    }
+    
+    // 키 리스트 (140-200)
+    for (let i = 140; i <= 200; i++) {
+        $('#ideal_height_1_list').append('<li data-nm="ideal_height_1" data-value="' + i + '">' + i + '</li>');
+        $('#ideal_height_2_list').append('<li data-nm="ideal_height_2" data-value="' + i + '">' + i + '</li>');
+    }
+});
+</script>
+

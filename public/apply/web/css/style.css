@@ -1,0 +1,446 @@
+.join-head{ padding-top: 10px; 
+    /* position: relative;  */
+    height: 44px; 
+    position: sticky;
+    background: white;
+    top: 0;
+    z-index: 1;}
+.join-head .btn-back{ padding-left: 30px; width: 9px; height: 15px; background: url('../images/btn_back.png') no-repeat center; position: absolute; left: 0; top: 17px; }
+.join-head h1{ font-size: 20px; text-align: center; padding-bottom: 12px; }
+.join-head .btn-next{ padding-right: 30px; right: 0; top: 17px; 
+    font-weight: bold; color: #e7607f; font-size: 14px; position: absolute; }
+.join-head .progress-bar{ background: #EAEAEA; height: 2px; border-radius: 1px; }
+.join-head .progress-bar span{ display: block; height: 2px; background: #FF7B99; border-radius: 1px;; }
+
+.agree-wrap > div::after{ display: block; clear: both; content:""; }
+.agree-wrap > div p{ float: left; color: #707070 }
+.agree-wrap > div p span{ display: inline-block; padding-right: 13px; }
+.agree-wrap > div .input-wrap{ float: right; }
+.agree-wrap .agree-all{ padding-bottom: 15px; border-bottom: 1px solid #EAEAEA; }
+.agree-wrap .agree-text > textarea { width: 100%; height:40px; color:gray; font-size: 9px; overflow-y:scroll;}
+
+.agree-arrow {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGc+CiAgICAgICAgICAgIDxnPgogICAgICAgICAgICAgICAgPHBhdGggZmlsbD0iIzIxMkIzNiIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNNS4xODEgMi4yMWMuMjMzLS4yNDguNjEtLjI3OC44NzgtLjA4MmwuMDY1LjA1MyA1LjY2NiA1LjMzNGMuMjYuMjQ0LjI3OC42NDUuMDU2LjkxMWwtLjA1Ni4wNi01LjY2NiA1LjMzM2MtLjI2OS4yNTItLjY5LjI0LS45NDMtLjAyOS0uMjMzLS4yNDctLjI0LS42MjYtLjAyOS0uODgxbC4wNTgtLjA2MUwxMC4zNiA4IDUuMjEgMy4xNTJjLS4yNDgtLjIzMy0uMjc4LS42MS0uMDgyLS44NzhsLjA1My0uMDY0eiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTcxMTUgLTgxNikgdHJhbnNsYXRlKDcxMTUgODE2KSIvPgogICAgICAgICAgICAgICAgPHBhdGggZmlsbD0iI0ZGRiIgZmlsbC1vcGFjaXR5PSIwIiBkPSJNMCAxNkwxNiAxNiAxNiAwIDAgMHoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC03MTE1IC04MTYpIHRyYW5zbGF0ZSg3MTE1IDgxNikiLz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg==);
+    margin: 5px 0 0 10px;
+    cursor: pointer;
+}
+
+.photo-list::after{ display: block; clear: both; content:""; }
+.photo-list li{ float: left; width: calc(33.3333% - 0.417em); position: relative; padding-top: 31.32%; border-radius: 10px; overflow: hidden; }
+.photo-list li + li{ margin-left: 10px; }
+.photo-list li p{ position: absolute; text-align: center; top: 5px; width: 100%; }
+.photo-list li img{ position: absolute; z-index: 1; left: 50%; top: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; max-height: 100%; width: auto; height: auto; }
+
+.photo-list.photo-face-man li:first-child{ background: #F8F8F8 url('../images/bg_photo_man1.png') no-repeat center center ; }
+.photo-list.photo-face-man li:nth-child(2){ background: #F8F8F8 url('../images/bg_photo_man1.png') no-repeat center center; }
+.photo-list.photo-face-man li:nth-child(3){ background: #F8F8F8 url('../images/bg_photo_man2.png') no-repeat center center; }
+
+.photo-list.photo-body-man li:first-child{ background: #F8F8F8 url('../images/bg_photo_man3.png') no-repeat center center; }
+.photo-list.photo-body-man li:nth-child(2){ background: #F8F8F8 url('../images/bg_photo_man4.png') no-repeat center center; }
+.photo-list.photo-body-man li:nth-child(3){ background: #F8F8F8 url('../images/bg_photo_man5.png') no-repeat center center;}
+
+.photo-list.photo-face-woman li:first-child{ background: #F8F8F8 url('../images/bg_photo_woman1.png') no-repeat center center; }
+.photo-list.photo-face-woman li:nth-child(2){ background: #F8F8F8 url('../images/bg_photo_woman1.png') no-repeat center center; }
+.photo-list.photo-face-woman li:nth-child(3){ background: #F8F8F8 url('../images/bg_photo_woman2.png') no-repeat center center; }
+
+.photo-list.photo-body-woman li:first-child{ background: #F8F8F8 url('../images/bg_photo_woman3.png') no-repeat center center; }
+.photo-list.photo-body-woman li:nth-child(2){ background: #F8F8F8 url('../images/bg_photo_woman4.png') no-repeat center center; }
+.photo-list.photo-body-woman li:nth-child(3){ background: #F8F8F8 url('../images/bg_photo_woman5.png') no-repeat center center; }
+
+.photo-wrap{ width: 100%; border-radius: 10px; height: 120px; }
+
+.photo-wrap.photo-certification{ background: #f8f8f8 url('../images/bg_certificate.png') no-repeat center; padding-top: 73.78%; position: relative; height:0; }
+
+.complete-wrap{ text-align: center; margin-top: 10px; }
+.complete-wrap .manager-wrap{ border-top: 1px solid #EAEAEA; border-bottom: 1px solid #EAEAEA; position: relative; }
+.complete-wrap .manager-wrap::before,
+.complete-wrap .manager-wrap::after{ content:""; display: block; width: 3px; height: 3px; border-radius: 50%; background: #EAEAEA; border: 4px solid #ffffff; position: absolute; }
+.complete-wrap .manager-wrap::before{ top: 0; left: 50%; transform: translate(-50%, -50%); }
+.complete-wrap .manager-wrap::after{ bottom: 0; left: 50%; transform: translate(-50%, 50%); }
+.complete-wrap .manager-wrap p{ font-size: 12px; color: #B9B9B9; }
+.complete-wrap .manager-wrap h2{ font-size: 40px; color: #FF7B99; }
+.complete-wrap > p{ font-size: 14px; line-height: 2.14; }
+.complete-wrap .btn{ width: 100%; }
+
+.approval-no{ padding-left: 28px; }
+.approval-no::before{ position: absolute; width: 18px; height: 16px; background: url('../images/icon_approval_no.png') no-repeat center; background-size: 100%; left: 0; top: 50%; transform: translateY(-50%); display: block; content:""; }
+.approval{ padding-left: 28px; }
+.approval::before{ position: absolute; width: 18px; height: 16px; background: url('../images/icon_approval.png') no-repeat center; background-size: 100%; left: 0; top: 50%; transform: translateY(-50%); display: block; content:""; }
+
+.photo-guide{ text-align: center; }
+.photo-guide .img-wrap{ position: relative; width: 100%; padding-top: 100%; border-radius: 10px; overflow: hidden; background: #F8F8F8; }
+.photo-guide .img-wrap img{ position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%; max-width: 100%; max-height: 100%; }
+.photo-guide .img-wrap i{ display: block; width: 78px; height: 78px; background: url('../images/icon_guide_no.png') no-repeat center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.tit-guide{ font-size: 12px; }
+
+.guide-id-wrap{ text-align: center; }
+.guide-id-wrap h2{ font-size: 18px; font-weight: 700; color: #707070; }
+.guide-id-wrap h2 p{ font-size: 15px; }
+.guide-id-wrap img{ max-width: 100%; }
+.guide-id-wrap ul{ max-width: 274px; text-align: left; margin: 8px auto 0; display: block }
+.guide-id-wrap ul li{ position: relative; padding-left: 30px; font-size: 12px; font-weight: 700; color: #707070  }
+.guide-id-wrap ul li span{ position: absolute; display: block; left: 6px; width: 18px; height: 18px; background: #FF7B99; text-align: center; line-height: 18px; font-size: 10px; color: #ffffff; border-radius: 50%; }
+.guide-id-wrap ul li + li{ margin-top: 5px; }
+
+/* popup */
+#acountDuplication h2{ font-size: 20px; text-align: center; }
+
+#coment .color-ff7600{ font-size: 14px; }
+
+#birthday .datepicker{ border-top: 1px solid #EAEAEA; padding-top: 10px; height: 230px; }
+#birthday .datepicker::after{ display: block; clear: both; content:""; }
+#birthday .datepicker > div{ float: left; text-align: center; height: 100%; }
+#birthday .datepicker > div .tit{ font-size: 14px; color: #B9B9B9; padding-bottom: 5px; border-bottom: 1px solid #F8F8F8 }
+#birthday .datepicker > div ul{ overflow-y: auto; border-bottom: 1px solid #F8F8F8; height: calc(100% - 27px); }
+#birthday .datepicker > div ul li{ color: #707070; line-height: 47px; height: 47px; border-bottom: 1px solid #F8F8F8; position: relative; cursor: pointer; }
+#birthday .datepicker > div ul li:last-child{ border-bottom: none; }
+#birthday .datepicker > div ul li.on::before{ position: absolute; display: block; content:""; width: 8px; height: 8px; border-radius: 50%; background: #FF7B99; top: 50%; transform: translateY(-50%); }
+#birthday .datepicker .year{ width: calc(53% - 12px); }
+#birthday .datepicker .month{ width: calc(23.5% - 12px); margin-left: 18px; }
+#birthday .datepicker .day{ width: calc(23.5% - 12px); margin-left: 18px; }
+
+#marital .color-ff7600{ font-size: 14px; }
+
+#age .range-wrap{ padding-top: 30px; padding-bottom: 35px; }
+#age .range-wrap .txt-age{ color: #FF7B99; font-size: 18px; font-weight: 700; text-align: center; margin-bottom: 40px; }
+#age .range-wrap #rangeSlider{ width: calc(100% - 26px); margin: 0 auto; border: none; box-shadow: none; height: 4px; background: #EAEAEA; border-radius: 2px; }
+#age .range-wrap #rangeSlider .noUi-connect{ background: #FF7B99 }
+#age .range-wrap #rangeSlider .noUi-handle{ border: none; border-radius: 50%; background: #FF7B99; cursor: default; box-shadow: none; width: 26px; height: 26px; right: -13px; top: -11px; }
+#age .range-wrap #rangeSlider .noUi-handle:before, 
+#age .range-wrap #rangeSlider .noUi-handle:after{ display: none; }
+
+#height .height-wrap{ padding-top: 30px; padding-bottom: 35px; }
+#height .height-wrap .txt-height{ color: #FF7B99; font-size: 18px; font-weight: 700; text-align: center; margin-bottom: 40px; }
+#height .height-wrap #heightSlider{ width: calc(100% - 26px); margin: 0 auto; border: none; box-shadow: none; height: 4px; background: #EAEAEA; border-radius: 2px; }
+#height .height-wrap #heightSlider .noUi-connect{ background: #FF7B99 }
+#height .height-wrap #heightSlider .noUi-handle{ border: none; border-radius: 50%; background: #FF7B99; cursor: default; box-shadow: none; width: 26px; height: 26px; right: -13px; top: -11px; }
+#height .height-wrap #heightSlider .noUi-handle:before, 
+#height .height-wrap #heightSlider .noUi-handle:after{ display: none; }
+
+#userHeight ul{ overflow-y: auto; border-bottom: 1px solid #F8F8F8; height: 205px; }
+#userHeight ul li{ color: #707070; line-height: 47px; height: 47px; text-align: center; border-bottom: 1px solid #F8F8F8; position: relative; cursor: pointer; }
+#userHeight ul li:last-child{ border-bottom: none; }
+#userHeight ul li.on::before{ position: absolute; display: block; content:""; width: 8px; height: 8px; border-radius: 50%; background: #FF7B99; top: 50%; transform: translateY(-50%); }
+
+#idearHeight ul{ overflow-y: auto; border-bottom: 1px solid #F8F8F8; height: 205px; }
+#idearHeight ul li{ color: #707070; line-height: 47px; height: 47px; text-align: center; border-bottom: 1px solid #F8F8F8; position: relative; cursor: pointer; }
+#idearHeight ul li:last-child{ border-bottom: none; }
+#idearHeight ul li.on::before{ position: absolute; display: block; content:""; width: 8px; height: 8px; border-radius: 50%; background: #FF7B99; top: 50%; transform: translateY(-50%); }
+#idearHeight .start{ display: inline-block; text-align: center; width: calc(45% - 12px); }
+#idearHeight .end{ display: inline-block; text-align: center; width: calc(45% - 12px); margin-left: 18px; }
+
+#idearAge ul{ overflow-y: auto; border-bottom: 1px solid #F8F8F8; height: 205px; }
+#idearAge ul li{ color: #707070; line-height: 47px; height: 47px; text-align: center; border-bottom: 1px solid #F8F8F8; position: relative; cursor: pointer; }
+#idearAge ul li:last-child{ border-bottom: none; }
+#idearAge ul li.on::before{ position: absolute; display: block; content:""; width: 8px; height: 8px; border-radius: 50%; background: #FF7B99; top: 50%; transform: translateY(-50%); }
+#idearAge .start{ display: inline-block; width: calc(45% - 12px); }
+#idearAge .end{ display: inline-block; width: calc(45% - 12px); margin-left: 18px; }
+#idearAge .start{ display: inline-block; text-align: center; width: calc(45% - 12px); }
+#idearAge .end{ display: inline-block; text-align: center; width: calc(45% - 12px); margin-left: 18px; }
+
+[id^="area"] .map-wrap{ position: relative; line-height: 0; height: 0; padding-top: 50%; box-sizing: border-box; }
+[id^="area"] .map-wrap img{ max-width: 100%; }
+[id^="area"] .map-wrap input[type="radio"]{   }
+[id^="area"] .map-wrap label{ opacity: 1; font-size: 2vw; position: absolute; text-align: center; color: #6e929f; cursor: pointer; }
+[id^="area"] .map-wrap label.on{ color: #FF7B99; }
+
+/* 서울 */
+#areaSeoul .map-wrap{ background: url('../images/bg_map_seoul.png') no-repeat center; background-size: 100%; padding-top: 90.8%; }
+#areaSeoul .map-wrap label{ font-size: 2vw; }
+#areaSeoul .map-wrap label:nth-of-type(1){ top: 11.4%; left: 61%; }
+#areaSeoul .map-wrap label:nth-of-type(2){ top: 17.4%; right: 21.8%; }
+#areaSeoul .map-wrap label:nth-of-type(3){ top: 21.97%; right: 37.4%; }
+#areaSeoul .map-wrap label:nth-of-type(4){ top: 28.9%; left: 36.5%; }
+#areaSeoul .map-wrap label:nth-of-type(5){ top: 41.8%; left: 48.2%; }
+#areaSeoul .map-wrap label:nth-of-type(6){ left: 57.8%; top: 36.5%; }
+#areaSeoul .map-wrap label:nth-of-type(7){ top: 37.5%; right: 17.4%; }
+#areaSeoul .map-wrap label:nth-of-type(8){ top: 44%; left: 36.1%; }
+#areaSeoul .map-wrap label:nth-of-type(9){ top: 43.3%; right: 26%; }
+#areaSeoul .map-wrap label:nth-of-type(10){ top: 50.6%; left: 52.2%; }
+#areaSeoul .map-wrap label:nth-of-type(11){ top: 54.2%; right: 30.6%; }
+#areaSeoul .map-wrap label:nth-of-type(12){ top: 55.6%; right: 19.6%; }
+#areaSeoul .map-wrap label:nth-of-type(13){ top: 51.4%; left: 30.6%; }
+#areaSeoul .map-wrap label:nth-of-type(14){ top: 60.4%; left: 47.6%; }
+#areaSeoul .map-wrap label:nth-of-type(15){ top: 49.2%; left: 9.3%; }
+#areaSeoul .map-wrap label:nth-of-type(16){ top: 64.4%; left: 17%; }
+#areaSeoul .map-wrap label:nth-of-type(17){ top: 65.3%; left: 28.1%; }
+#areaSeoul .map-wrap label:nth-of-type(18){ top: 72.7%; left: 17.1%; }
+#areaSeoul .map-wrap label:nth-of-type(19){ top: 71.1%; left: 39.9%; }
+#areaSeoul .map-wrap label:nth-of-type(20){ bottom: 13.7%; left: 27.2%; }
+#areaSeoul .map-wrap label:nth-of-type(21){ bottom: 13.8%; left: 39.8%; }
+#areaSeoul .map-wrap label:nth-of-type(22){ bottom: 20.1%; left: 54.6%; }
+#areaSeoul .map-wrap label:nth-of-type(23){ bottom: 22.9%; right: 24.7%; }
+#areaSeoul .map-wrap label:nth-of-type(24){ bottom: 29.4%; right: 14.2%; }
+#areaSeoul .map-wrap label:nth-of-type(25){ top: 55%; right: 4.6%; }
+
+/* 인천 */
+#areaIncheon .map-wrap{ background: url('../images/bg_map_incheon.png') no-repeat center; background-size: 100%; padding-top: 85.4%; }
+#areaIncheon .map-wrap label{ font-size: 1.87vw; }
+#areaIncheon .map-wrap label:nth-of-type(1){ top: 26.9%; left: 44.2%; }
+#areaIncheon .map-wrap label:nth-of-type(2){ bottom: 27.4%; left: 41.3%; }
+#areaIncheon .map-wrap label:nth-of-type(3){ top: 53.97%; right: 21.4%; }
+#areaIncheon .map-wrap label:nth-of-type(4){ bottom: 42.1%; right: 6.3%; }
+#areaIncheon .map-wrap label:nth-of-type(5){ bottom: 29.3%; right: 8.3%; }
+#areaIncheon .map-wrap label:nth-of-type(6){ right: 22.5%; bottom: 25.5%; }
+#areaIncheon .map-wrap label:nth-of-type(7){ bottom: 20.3%; right: 26.6%; }
+#areaIncheon .map-wrap label:nth-of-type(8){ bottom: 19.3%; right: 18.3%; }
+#areaIncheon .map-wrap label:nth-of-type(9){ bottom: 11.2%; right: 17.3%; }
+#areaIncheon .map-wrap label:nth-of-type(10){ bottom: 14.2%; right: 6.2%; }
+
+/* 경기도 */
+#areaGyeonggy .map-wrap{ background: url('../images/bg_map_gyeonggy_do.png') no-repeat center; background-size: 100%; padding-top: 126.3%; }
+#areaGyeonggy .map-wrap label{ font-size: 3vw; }
+#areaGyeonggy .map-wrap label:nth-of-type(1){ top: 13.8%; left: 38.2%; }
+#areaGyeonggy .map-wrap label:nth-of-type(2){ top: 22.3%; right: 40.3%; }
+#areaGyeonggy .map-wrap label:nth-of-type(3){ top: 28.6%; left: 21.5%; }
+#areaGyeonggy .map-wrap label:nth-of-type(4){ top: 28.9%; left: 36.5%; top: 25.8%; left: 39.6%; font-size: 2.9vw; }
+#areaGyeonggy .map-wrap label:nth-of-type(5){ top: 32.2%; left: 35.7%; }
+#areaGyeonggy .map-wrap label:nth-of-type(6){ left: 65.6%; top: 32.8%; }
+#areaGyeonggy .map-wrap label:nth-of-type(7){ top: 38.7%; left: 39.4%; font-size: 2.9vw; }
+#areaGyeonggy .map-wrap label:nth-of-type(8){ top: 42.1%; left: 7.1%; font-size: 2.8vw; }
+#areaGyeonggy .map-wrap label:nth-of-type(9){ top: 43.6%; left: 22.9%; }
+#areaGyeonggy .map-wrap label:nth-of-type(10){ top: 43.8%; left: 51%; font-size: 2.9vw; }
+#areaGyeonggy .map-wrap label:nth-of-type(11){ top: 48.7%; left: 43.2%; font-size: 2.8vw; }
+#areaGyeonggy .map-wrap label:nth-of-type(12){ top: 53.8%; left: 50.4%; }
+#areaGyeonggy .map-wrap label:nth-of-type(13){ top: 55.2%; right: 15.6%; }
+#areaGyeonggy .map-wrap label:nth-of-type(14){ top: 55.5%; left: 21.1%; font-size: 2.3vw; }
+#areaGyeonggy .map-wrap label:nth-of-type(15){ top: 58.9%; left: 26.4%; font-size: 2.3vw; }
+#areaGyeonggy .map-wrap label:nth-of-type(16){ top: 60.1%; left: 36.4%; font-size: 2.3vw; }
+#areaGyeonggy .map-wrap label:nth-of-type(17){ top: 62%; left: 43.2%; }
+#areaGyeonggy .map-wrap label:nth-of-type(18){ top: 62.7%; left: 57.3%; }
+#areaGyeonggy .map-wrap label:nth-of-type(19){ top: 62.7%; left: 21.9%; font-size: 2.2vw; }
+#areaGyeonggy .map-wrap label:nth-of-type(20){ bottom: 37.3%; left: 31.4%; font-size: 2.2vw; }
+#areaGyeonggy .map-wrap label:nth-of-type(21){ bottom: 35.1%; left: 36.2%; font-size: 2.3vw; }
+#areaGyeonggy .map-wrap label:nth-of-type(22){ bottom: 33.6%; left: 31%; font-size: 2.3vw; }
+#areaGyeonggy .map-wrap label:nth-of-type(23){ bottom: 32.4%; left: 25.4%; font-size: 2.3vw; }
+#areaGyeonggy .map-wrap label:nth-of-type(24){ bottom: 28.9%; left: 36.3%; font-size: 3vw; }
+#areaGyeonggy .map-wrap label:nth-of-type(25){ bottom: 29.4%; right: 11.4%; }
+#areaGyeonggy .map-wrap label:nth-of-type(26){ bottom: 25.7%; right: 25.9%; }
+#areaGyeonggy .map-wrap label:nth-of-type(27){ bottom: 25%; left: 52.4%; }
+#areaGyeonggy .map-wrap label:nth-of-type(28){ bottom: 21.8%; left: 27.7%; }
+#areaGyeonggy .map-wrap label:nth-of-type(29){ bottom: 20.4%; left: 39.5%; }
+#areaGyeonggy .map-wrap label:nth-of-type(30){ bottom: 10.8%; left: 56.5%; }
+#areaGyeonggy .map-wrap label:nth-of-type(31){ bottom: 9.9%; left: 35.7%; }
+
+/* 대구 */
+#areaDaegu .map-wrap{ background: url('../images/bg_map_daegu.png') no-repeat center; background-size: 100%; padding-top: 124.5%; }
+#areaDaegu .map-wrap label{ font-size: 2.8vw; }
+#areaDaegu .map-wrap label:nth-of-type(1){ top: 19.2%; right: 16.2%; }
+#areaDaegu .map-wrap label:nth-of-type(2){ top: 23.6%; left: 50.5%; }
+#areaDaegu .map-wrap label:nth-of-type(3){ top: 33%; left: 17.7%; }
+#areaDaegu .map-wrap label:nth-of-type(4){ top: 34.5%; left: 44.1%; }
+#areaDaegu .map-wrap label:nth-of-type(5){ top: 36.2%; left: 55.7%; }
+#areaDaegu .map-wrap label:nth-of-type(6){ left: 53.8%; top: 44%; }
+#areaDaegu .map-wrap label:nth-of-type(7){ top: 44.3%; right: 21%;; }
+#areaDaegu .map-wrap label:nth-of-type(8){ top: 45.3%; left: 37%; }
+#areaDaegu .map-wrap label:nth-of-type(9){ bottom: 32.9%; left: 30.1%; }
+
+/* 부산 */
+#areaBusan .map-wrap{ background: url('../images/bg_map_busan.png') no-repeat center; background-size: 100%; padding-top: 98.6%; }
+#areaBusan .map-wrap label{ font-size: 2.2vw; }
+#areaBusan .map-wrap label:nth-of-type(1){ top: 22.5%; right: 17.8%; }
+#areaBusan .map-wrap label:nth-of-type(2){ top: 33.2%; right: 38.2%; }
+#areaBusan .map-wrap label:nth-of-type(3){ top: 39.7%; left: 42.3%; }
+#areaBusan .map-wrap label:nth-of-type(4){ top: 43.3%; left: 50.4%; }
+#areaBusan .map-wrap label:nth-of-type(5){ top: 48.9%; right: 24.8%; }
+#areaBusan .map-wrap label:nth-of-type(6){ left: 52.7%; top: 49.5%; }
+#areaBusan .map-wrap label:nth-of-type(7){ top: 53.8%; left: 44.3%; }
+#areaBusan .map-wrap label:nth-of-type(8){ top: 54.7%; right: 33.4%; }
+#areaBusan .map-wrap label:nth-of-type(9){ top: 55.5%; left: 34%; }
+#areaBusan .map-wrap label:nth-of-type(10){ top: 63.2%; left: 47.5%; }
+#areaBusan .map-wrap label:nth-of-type(11){ top: 63.7%; right: 38.9%; }
+#areaBusan .map-wrap label:nth-of-type(12){ top: 64.5%; left: 41%; }
+#areaBusan .map-wrap label:nth-of-type(13){ top: 65%; left: 15.5%; }
+#areaBusan .map-wrap label:nth-of-type(14){ top: 69.2%; left: 44.8%; }
+#areaBusan .map-wrap label:nth-of-type(15){ top: 71.7%; left: 33.4%; }
+#areaBusan .map-wrap label:nth-of-type(16){ top: 75.1%; left: 50.3%; }
+
+/* 대전 */
+#areaDaejeon .map-wrap{ background: url('../images/bg_map_daejeon.png') no-repeat center; background-size: 100%; padding-top: 108.1%; }
+#areaDaejeon .map-wrap label{ font-size: 2.4vw; }
+#areaDaejeon .map-wrap label:nth-of-type(1){ top: 27.9%; right: 35.3%; }
+#areaDaejeon .map-wrap label:nth-of-type(2){ top: 35.8%; left: 23.1%; }
+#areaDaejeon .map-wrap label:nth-of-type(3){ top: 53.6%; right: 25.2%; }
+#areaDaejeon .map-wrap label:nth-of-type(4){ top: 61%; left: 31%; }
+#areaDaejeon .map-wrap label:nth-of-type(5){ top: 64.3%; left: 48.9%; }
+
+/* 광주 */
+#areaGwangju .map-wrap{ background: url('../images/bg_map_gwangju.png') no-repeat center; background-size: 100%; padding-top: 69.1%; }
+#areaGwangju .map-wrap label{ font-size: 1.8vw; }
+#areaGwangju .map-wrap label:nth-of-type(1){ top: 30.8%; right: 25.9%; }
+#areaGwangju .map-wrap label:nth-of-type(2){ top: 44.3%; left: 24.8%; }
+#areaGwangju .map-wrap label:nth-of-type(3){ top: 58%; left: 54.1%; }
+#areaGwangju .map-wrap label:nth-of-type(4){ top: 67.1%; right: 15.1%; }
+#areaGwangju .map-wrap label:nth-of-type(5){ top: 78.3%; left: 58%; }
+
+/* 울산 */
+#areaUlsan .map-wrap{ background: url('../images/bg_map_ulsan.png') no-repeat center; background-size: 100%; padding-top: 91%; }
+#areaUlsan .map-wrap label{ font-size: 2vw; }
+#areaUlsan .map-wrap label:nth-of-type(1){ top: 26.2%; right: 15%; }
+#areaUlsan .map-wrap label:nth-of-type(2){ top: 37.8%; right: 29.9%; }
+#areaUlsan .map-wrap label:nth-of-type(3){ top: 42%; left: 34.8%; }
+#areaUlsan .map-wrap label:nth-of-type(4){ top: 49.6%; right: 5.9%; }
+#areaUlsan .map-wrap label:nth-of-type(5){ top: 51.5%; right: 25%; }
+
+/* 강원도 */
+#areaGangwon .map-wrap{ background: url('../images/bg_map_gangwon_do.png') no-repeat center; background-size: 100%; padding-top: 94.1%; }
+#areaGangwon .map-wrap label{ font-size: 2.2vw; }
+#areaGangwon .map-wrap label:nth-of-type(1){ top: 16.8%; left: 57.4%; }
+#areaGangwon .map-wrap label:nth-of-type(2){ top: 20.8%; left: 10.6%; }
+#areaGangwon .map-wrap label:nth-of-type(3){ top: 24.7%; left: 39.3%; }
+#areaGangwon .map-wrap label:nth-of-type(4){ top: 26%; left: 24.5%; }
+#areaGangwon .map-wrap label:nth-of-type(5){ top: 28.2%; right: 32.6%; }
+#areaGangwon .map-wrap label:nth-of-type(6){ left: 49.1%; top: 34.9%; }
+#areaGangwon .map-wrap label:nth-of-type(7){ top: 38.4%; right: 28.9%; }
+#areaGangwon .map-wrap label:nth-of-type(8){ top: 42.3%; left: 25.5%; }
+#areaGangwon .map-wrap label:nth-of-type(9){ top: 52.6%; left: 39.3%; }
+#areaGangwon .map-wrap label:nth-of-type(10){ top: 56.2%; right: 18.9%; }
+#areaGangwon .map-wrap label:nth-of-type(11){ top: 65.7%; left: 41.3%; }
+#areaGangwon .map-wrap label:nth-of-type(12){ top: 65.9%; left: 56.4%; }
+#areaGangwon .map-wrap label:nth-of-type(13){ top: 70.7%; right: 10.6%; }
+#areaGangwon .map-wrap label:nth-of-type(14){ top: 76.2%; right: 26.9%; }
+#areaGangwon .map-wrap label:nth-of-type(15){ top: 78.5%; left: 30.1%; }
+#areaGangwon .map-wrap label:nth-of-type(16){ top: 85.2%; right: 6.1%; }
+#areaGangwon .map-wrap label:nth-of-type(17){ top: 89.5%; left: 59%; }
+#areaGangwon .map-wrap label:nth-of-type(18){ top: 92.6%; right: 15.3%; }
+
+/* 충천북도 */
+#areaChungcheongbuk .map-wrap{ background: url('../images/bg_map_chungcheongbuk_do.png') no-repeat center; background-size: 100%; padding-top: 109.1%; }
+#areaChungcheongbuk .map-wrap label{ font-size: 2.6vw; }
+#areaChungcheongbuk .map-wrap label:nth-of-type(1){ top: 17.6%; right: 33.3%; }
+#areaChungcheongbuk .map-wrap label:nth-of-type(2){ top: 18.1%; left: 40%; }
+#areaChungcheongbuk .map-wrap label:nth-of-type(3){ top: 20.8%; right: 16.6%; }
+#areaChungcheongbuk .map-wrap label:nth-of-type(4){ top: 24.5%; left: 19%; }
+#areaChungcheongbuk .map-wrap label:nth-of-type(5){ top: 30%; left: 6.9%; }
+#areaChungcheongbuk .map-wrap label:nth-of-type(6){ left: 18.8%; top: 37.4%; }
+#areaChungcheongbuk .map-wrap label:nth-of-type(7){ top: 38.3%; left: 37.2%; }
+#areaChungcheongbuk .map-wrap label:nth-of-type(8){ top: 48.3%; left: 21.1%; }
+#areaChungcheongbuk .map-wrap label:nth-of-type(9){ top: 49.1%; left: 9.6%; }
+#areaChungcheongbuk .map-wrap label:nth-of-type(10){ top: 59.9%; left: 29.5%; }
+#areaChungcheongbuk .map-wrap label:nth-of-type(11){ top: 73.5%; left: 24.4%; }
+#areaChungcheongbuk .map-wrap label:nth-of-type(12){ top: 87.6%; left: 35.5%; }
+
+/* 충천남도 */
+#areaChungcheongnam .map-wrap{ background: url('../images/bg_map_chungcheongnam_do.png') no-repeat center; background-size: 100%; padding-top: 90.2%; }
+#areaChungcheongnam .map-wrap label{ font-size: 2vw; }
+#areaChungcheongnam .map-wrap label:nth-of-type(1){ top: 14.6%; left: 33.6%; }
+#areaChungcheongnam .map-wrap label:nth-of-type(2){ top: 21.6%; right: 25.4%; }
+#areaChungcheongnam .map-wrap label:nth-of-type(3){ top: 23%; left: 53.9%; }
+#areaChungcheongnam .map-wrap label:nth-of-type(4){ top: 26.5%; left: 7.1%; }
+#areaChungcheongnam .map-wrap label:nth-of-type(5){ top: 26.9%; left: 21.7%; }
+#areaChungcheongnam .map-wrap label:nth-of-type(6){ left: 42.9%; top: 34.8%; }
+#areaChungcheongnam .map-wrap label:nth-of-type(7){ top: 45.7%; left: 30.3%; }
+#areaChungcheongnam .map-wrap label:nth-of-type(8){ top: 52.4%; left: 60.6%; }
+#areaChungcheongnam .map-wrap label:nth-of-type(9){ top: 57.1%; left: 45.2%; }
+#areaChungcheongnam .map-wrap label:nth-of-type(10){ top: 67.9%; left: 29.7%; }
+#areaChungcheongnam .map-wrap label:nth-of-type(11){ top: 69%; right: 23%; }
+#areaChungcheongnam .map-wrap label:nth-of-type(12){ top: 75%; left: 45.8%; }
+#areaChungcheongnam .map-wrap label:nth-of-type(13){ top: 80%; right: 29.1%; }
+#areaChungcheongnam .map-wrap label:nth-of-type(14){ top: 87.2%; left: 36.8%; }
+#areaChungcheongnam .map-wrap label:nth-of-type(15){ top: 86.1%; right: 9.1%; }
+
+/* 경상북도 */
+#areaGyeongsangbuk .map-wrap{ background: url('../images/bg_map_gyeongsangbuk_do.png') no-repeat center; background-size: 100%; padding-top: 89.8%; }
+#areaGyeongsangbuk .map-wrap label{ font-size: 2vw; }
+#areaGyeongsangbuk .map-wrap label:nth-of-type(1){ top: 13.7%; right: 29.6%; }
+#areaGyeongsangbuk .map-wrap label:nth-of-type(2){ top: 14.5%; left: 46.9%; }
+#areaGyeongsangbuk .map-wrap label:nth-of-type(3){ top: 19.8%; left: 33.2%; }
+#areaGyeongsangbuk .map-wrap label:nth-of-type(4){ top: 25.8%; right: 9.1%; }
+#areaGyeongsangbuk .map-wrap label:nth-of-type(5){ top: 27.8%; right: 37.7%; }
+#areaGyeongsangbuk .map-wrap label:nth-of-type(6){ right: 0%; top: 30.5%; }
+#areaGyeongsangbuk .map-wrap label:nth-of-type(7){ top: 29.4%; left: 14.5%; }
+#areaGyeongsangbuk .map-wrap label:nth-of-type(8){ top: 31.3%; left: 26.6%; }
+#areaGyeongsangbuk .map-wrap label:nth-of-type(9){ top: 34.6%; left: 41.8%; }
+#areaGyeongsangbuk .map-wrap label:nth-of-type(10){ top: 41.6%; right: 28.7%; }
+#areaGyeongsangbuk .map-wrap label:nth-of-type(11){ top: 46.7%; left: 10.8%; }
+#areaGyeongsangbuk .map-wrap label:nth-of-type(12){ top: 50.2%; left: 35.3%; }
+#areaGyeongsangbuk .map-wrap label:nth-of-type(13){ top: 49.4%; right: 40.1%; }
+#areaGyeongsangbuk .map-wrap label:nth-of-type(14){ top: 60.3%; left: 23.7%; }
+#areaGyeongsangbuk .map-wrap label:nth-of-type(15){ top: 60.8%; right: 31.3%; }
+#areaGyeongsangbuk .map-wrap label:nth-of-type(16){ top: 63%; left: 37.3%; }
+#areaGyeongsangbuk .map-wrap label:nth-of-type(17){ top: 67.6%; left: 10.8%; }
+#areaGyeongsangbuk .map-wrap label:nth-of-type(18){ top: 69.1%; left: 50.4%; }
+#areaGyeongsangbuk .map-wrap label:nth-of-type(19){ top: 71.4%; left: 28%; }
+#areaGyeongsangbuk .map-wrap label:nth-of-type(20){ top: 77.9%; left: 18.5%; }
+#areaGyeongsangbuk .map-wrap label:nth-of-type(21){ top: 81.6%; right: 32.2%; }
+#areaGyeongsangbuk .map-wrap label:nth-of-type(22){ bottom: 17.6%; left: 43.9%; }
+#areaGyeongsangbuk .map-wrap label:nth-of-type(23){ bottom: 10.4%; left: 20.8%; }
+#areaGyeongsangbuk .map-wrap label:nth-of-type(24){ bottom: 6%; left: 42.3%; }
+
+/* 경상남도 */
+#areaGyeongsangnam .map-wrap{ background: url('../images/bg_map_gyeongsangnam_do.png') no-repeat center; background-size: 100%; padding-top: 90.1%; }
+#areaGyeongsangnam .map-wrap label{ font-size: 2vw; }
+#areaGyeongsangnam .map-wrap label:nth-of-type(1){ top: 13.1%; left: 18%; }
+#areaGyeongsangnam .map-wrap label:nth-of-type(2){ top: 26.5%; left: 6.1%; }
+#areaGyeongsangnam .map-wrap label:nth-of-type(3){ top: 29.2%; left: 31.6%; }
+#areaGyeongsangnam .map-wrap label:nth-of-type(4){ top: 33.2%; left: 53.7%; }
+#areaGyeongsangnam .map-wrap label:nth-of-type(5){ top: 34.6%; right: 23.9%; }
+#areaGyeongsangnam .map-wrap label:nth-of-type(6){ left: 41.7%; top: 41.4%; }
+#areaGyeongsangnam .map-wrap label:nth-of-type(7){ top: 41%; right: 8%; }
+#areaGyeongsangnam .map-wrap label:nth-of-type(8){ top: 44.2%; left: 17.1%; }
+#areaGyeongsangnam .map-wrap label:nth-of-type(9){ top: 50.9%; left: 49.3%; }
+#areaGyeongsangnam .map-wrap label:nth-of-type(10){ top: 50.7%; right: 19.2%; }
+#areaGyeongsangnam .map-wrap label:nth-of-type(11){ top: 54.6%; right: 32.7%; }
+#areaGyeongsangnam .map-wrap label:nth-of-type(12){ top: 56.8%; left: 31.9%; }
+#areaGyeongsangnam .map-wrap label:nth-of-type(13){ top: 63.1%; left: 11.3%; }
+#areaGyeongsangnam .map-wrap label:nth-of-type(14){ top: 70.9%; left: 30.8%; }
+#areaGyeongsangnam .map-wrap label:nth-of-type(15){ top: 71.2%; left: 42.6%; }
+#areaGyeongsangnam .map-wrap label:nth-of-type(16){ top: 80.9%; left: 48.5%; }
+#areaGyeongsangnam .map-wrap label:nth-of-type(17){ top: 83.3%; right: 30.9%; }
+#areaGyeongsangnam .map-wrap label:nth-of-type(18){ top: 91.3%; left: 18.3%; }
+
+/* 전라북도 */
+#areaJeollabuk .map-wrap{ background: url('../images/bg_map_jeollabuk_do.png') no-repeat center; background-size: 100%; padding-top: 75.8%; }
+#areaJeollabuk .map-wrap label{ font-size: 1.8vw; }
+#areaJeollabuk .map-wrap label:nth-of-type(1){ top: 14.9%; left: 36%; }
+#areaJeollabuk .map-wrap label:nth-of-type(2){ top: 22.5%; left: 20.5%; }
+#areaJeollabuk .map-wrap label:nth-of-type(3){ top: 23%; left: 52.8%; }
+#areaJeollabuk .map-wrap label:nth-of-type(4){ top: 25.3%; right: 10.9%; }
+#areaJeollabuk .map-wrap label:nth-of-type(5){ top: 38.3%; left: 45.1%; }
+#areaJeollabuk .map-wrap label:nth-of-type(6){ left: 30.1%; top: 39.4%; }
+#areaJeollabuk .map-wrap label:nth-of-type(7){ top: 38.4%; right: 30.6%; }
+#areaJeollabuk .map-wrap label:nth-of-type(8){ top: 54.3%; left: 13.4%; }
+#areaJeollabuk .map-wrap label:nth-of-type(9){ top: 56%; right: 22.3%; }
+#areaJeollabuk .map-wrap label:nth-of-type(10){ top: 62.9%; left: 30.6%; }
+#areaJeollabuk .map-wrap label:nth-of-type(11){ top: 65.7%; right: 43.8%; }
+#areaJeollabuk .map-wrap label:nth-of-type(12){ top: 81.3%; left: 10.2%; }
+#areaJeollabuk .map-wrap label:nth-of-type(13){ top: 83.9%; right: 29.5%; }
+#areaJeollabuk .map-wrap label:nth-of-type(14){ top: 85.6%; left: 44.6%; }
+
+/* 전라남도 */
+#areaJeollanam .map-wrap{ background: url('../images/bg_map_jeollanam_do.png') no-repeat center; background-size: 100%; padding-top: 80.6%; }
+#areaJeollanam .map-wrap label{ font-size: 1.9vw; }
+#areaJeollanam .map-wrap label:nth-of-type(1){ top: 13.5%; left: 44.3%; }
+#areaJeollanam .map-wrap label:nth-of-type(2){ top: 15.2%; right: 40.3%; }
+#areaJeollanam .map-wrap label:nth-of-type(3){ top: 18.4%; left: 27.4%; }
+#areaJeollanam .map-wrap label:nth-of-type(4){ top: 20.9%; right: 12%; }
+#areaJeollanam .map-wrap label:nth-of-type(5){ top: 23.2%; right: 24.5%; }
+#areaJeollanam .map-wrap label:nth-of-type(6){ left: 31.6%; top: 30.1%; }
+#areaJeollanam .map-wrap label:nth-of-type(7){ top: 39.1%; right: 38.2%; }
+#areaJeollanam .map-wrap label:nth-of-type(8){ top: 39.4%; left: 42.3%; }
+#areaJeollanam .map-wrap label:nth-of-type(9){ top: 38%; right: 4.7%; }
+#areaJeollanam .map-wrap label:nth-of-type(10){ top: 40.9%; right: 19.4%; }
+#areaJeollanam .map-wrap label:nth-of-type(11){ top: 46.5%; left: 27.8%; }
+#areaJeollanam .map-wrap label:nth-of-type(12){ top: 48.3%; left: 5.6%; }
+#areaJeollanam .map-wrap label:nth-of-type(13){ top: 55.7%; left: 25%; }
+#areaJeollanam .map-wrap label:nth-of-type(14){ top: 54.8%; right: 31.3%; }
+#areaJeollanam .map-wrap label:nth-of-type(15){ top: 56.6%; left: 37%; }
+#areaJeollanam .map-wrap label:nth-of-type(16){ top: 57.3%; right: 4.7%; }
+#areaJeollanam .map-wrap label:nth-of-type(17){ top: 65.5%; left: 52.3%; }
+#areaJeollanam .map-wrap label:nth-of-type(18){ top: 66.2%; left: 44.7%; }
+#areaJeollanam .map-wrap label:nth-of-type(19){ top: 71.7%; right: 22.8%; }
+#areaJeollanam .map-wrap label:nth-of-type(20){ top: 77.3%; left: 33.6%; }
+#areaJeollanam .map-wrap label:nth-of-type(21){ top: 85.6%; left: 16.9%; }
+#areaJeollanam .map-wrap label:nth-of-type(22){ bottom: 7%; left: 40.2%; }
+
+/* 광주 */
+#areaJeju .map-wrap{ background: url('../images/bg_map_jeju_do.png') no-repeat center; background-size: 100%; padding-top: 63%; }
+#areaJeju .map-wrap label{ font-size: 1.7vw; }
+#areaJeju .map-wrap label:nth-of-type(1){ top: 9.8%; right: 0; }
+#areaJeju .map-wrap label:nth-of-type(2){ top: 30.1%; left: 41.9%; }
+#areaJeju .map-wrap label:nth-of-type(3){ top: 55.2%; left: 50.5%; }
+#areaJeju .map-wrap label:nth-of-type(4){ top: 88%; left: 4.3%; }
+#areaJeju .map-wrap label:nth-of-type(5){ top: 97.9%; left: 13.5%; }

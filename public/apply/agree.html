@@ -1,0 +1,269 @@
+<div class="sub join" id="agreePage">
+    <div class="container">
+        <div class="join-head">
+            <button type="button" class="btn-back"></button>
+            <h1>약관 동의 및 본인 인증</h1>
+            <button type="button" class="btn-next" onclick="agreeValidation()">다음</button>
+            <div class="progress-bar">
+                <span style="width: 20%;"></span>
+            </div>
+        </div>
+        <div class="tit-wrap mt25 mb25"><p>약관 동의</p></div>
+        <div class="agree-wrap">
+            <div class="agree-all">
+                <p>모두 동의</p>
+                <div class="input-wrap check">
+                    <label for="checkAll"><input type="checkbox" name="checkAll" id="checkAll"><span></span></label>
+                </div>
+            </div>
+            <div class="agree-item mt15">
+                <p><span class="color-ff7b99">[필수]</span>사이트 이용약관 동의</p>
+                <div class="agree-arrow" onclick="popOpenAndDim('termAgree', true)"></div>
+                <div class="input-wrap check">
+                    <label for="check1"><input type="checkbox" name="check1" id="check1" class="checkRadio"><span></span></label>
+                </div>
+            </div>
+            <div class="agree-item mt15">
+                <p><span class="color-ff7b99">[필수]</span>개인정보 수집 및 이용 동의</p>
+                <div class="agree-arrow" onclick="popOpenAndDim('privacyAgree', true)"></div>
+                <div class="input-wrap check">
+                    <label for="check2"><input type="checkbox" name="check2" id="check2" class="checkRadio"><span></span></label>
+                </div>
+            </div>
+            <div class="agree-item mt15">
+                <p><span class="color-ff7b99">[선택]</span>마케팅 정보 수신 동의</p>
+                <div class="agree-arrow" onclick="popOpenAndDim('marketingAgree', true)"></div>
+                <div class="input-wrap check">
+                    <label for="check3"><input type="checkbox" name="check3" id="check3" class="checkRadio"><span></span></label>
+                </div>
+            </div>
+        </div>
+        <div class="tit-wrap mt50 mb25"><p>본인인증</p></div>
+
+        <!-- 이름 -->
+        <div class="input-wrap text" onclick="popOpenAndDim('name', true);">
+            <label for="">이름</label>
+            <input type="text" name="_user_name" id="_user_name" placeholder="입력하세요" class="ta-r" readonly>
+            <i></i>
+        </div>
+
+        <div class="popup" id="name">
+            <p class="txt mb15">당신의 성함을 입력해주세요.</p>
+            <hr>
+            <div class="input-wrap text mt15">
+                <input type="text" name="user_name" id="user_name" placeholder="입력하세요" class="ta-c">
+            </div>
+            <button type="button" class="btn lg bg-ff7b99 mt15" onclick="textValidation('name', 'user_name');popOpenPass(this, 4);">확&nbsp;인</button>
+        </div>
+
+        <!-- 생년월일 -->
+        <div class="input-wrap text mt10 birthday" onclick="popOpenAndDim('birthday', true);">
+            <label for="">생년월일</label>
+            <input type="text" name="_birthday" id="_birthday" placeholder="선택하세요" class="ta-r" readonly>
+            <i></i>
+
+            <input type="hidden" name="birth_y" id="birth_y" >
+            <input type="hidden" name="birth_m" id="birth_m" >
+            <input type="hidden" name="birth_d" id="birth_d" >
+        </div>
+
+        <div class="popup" id="birthday">
+            <p class="txt">당신의 생년월일은?</p>
+            <p class="ta-c font14 mb15 color-ff7600">
+                팅팅팅은 만 19세 이상부터 이용이 가능합니다.
+            </p>
+            <div class="datepicker">
+                <div class="year">
+                    <p class="tit">연</p>
+                    <ul id="year">
+                        <li value="1970" class="on">1970</li>
+                        <li value="1971">1971</li>
+                        <li value="1972">1972</li>
+                        <li value="1973">1973</li>
+                        <li value="1974">1974</li>
+                        <li value="1975">1975</li>
+                        <li value="1976">1976</li>
+                        <li value="1977">1977</li>
+                        <li value="1978">1978</li>
+                        <li value="1979">1979</li>
+                        <li value="1980">1980</li>
+                        <li value="1981">1981</li>
+                        <li value="1982">1982</li>
+                        <li value="1983">1983</li>
+                        <li value="1984">1984</li>
+                        <li value="1985">1985</li>
+                        <li value="1986">1986</li>
+                        <li value="1987">1987</li>
+                        <li value="1988">1988</li>
+                        <li value="1989">1989</li>
+                        <li value="1990">1990</li>
+                        <li value="1991">1991</li>
+                        <li value="1992">1992</li>
+                        <li value="1993">1993</li>
+                        <li value="1994">1994</li>
+                        <li value="1995">1995</li>
+                        <li value="1996">1996</li>
+                        <li value="1997">1997</li>
+                        <li value="1998">1998</li>
+                        <li value="1999">1999</li>
+                        <li value="2000">2000</li>
+                        <li value="2001">2001</li>
+                        <li value="2002">2002</li>
+                        <li value="2003">2003</li>
+                        <li value="2004">2004</li>
+                        <li value="2005">2005</li>
+                        <li value="2006">2006</li>
+                        <li value="2007">2007</li>
+                        <li value="2008">2008</li>
+                        <li value="2009">2009</li>
+                    </ul>
+                </div>
+                <div class="month">
+                    <p class="tit">월</p>
+                    <ul id="month">
+                        <li value="01" class="on">01</li>
+                        <li value="02">02</li>
+                        <li value="03">03</li>
+                        <li value="04">04</li>
+                        <li value="05">05</li>
+                        <li value="06">06</li>
+                        <li value="07">07</li>
+                        <li value="08">08</li>
+                        <li value="09">09</li>
+                        <li value="10">10</li>
+                        <li value="11">11</li>
+                        <li value="12">12</li>
+                    </ul>
+                </div>
+                <div class="day">
+                    <p class="tit">일</p>
+                    <ul id="day">
+                        <li value="01" class="on">01</li>
+                        <li value="02">02</li>
+                        <li value="03">03</li>
+                        <li value="04">04</li>
+                        <li value="05">05</li>
+                        <li value="06">06</li>
+                        <li value="07">07</li>
+                        <li value="08">08</li>
+                        <li value="09">09</li>
+                        <li value="10">10</li>
+                        <li value="11">11</li>
+                        <li value="12">12</li>
+                        <li value="13">13</li>
+                        <li value="14">14</li>
+                        <li value="15">15</li>
+                        <li value="16">16</li>
+                        <li value="17">17</li>
+                        <li value="18">18</li>
+                        <li value="19">19</li>
+                        <li value="20">20</li>
+                        <li value="21">21</li>
+                        <li value="22">22</li>
+                        <li value="23">23</li>
+                        <li value="24">24</li>
+                        <li value="25">25</li>
+                        <li value="26">26</li>
+                        <li value="27">27</li>
+                        <li value="28">28</li>
+                        <li value="29">29</li>
+                        <li value="30">30</li>
+                        <li value="31">31</li>
+                    </ul>
+                </div>
+            </div>
+            <button type="button" class="btn lg bg-ff7b99 mt40" onclick="birthValidation(this, 4);">확&nbsp;인</button>
+        </div>
+
+        <!-- 성별 -->
+        <div class="input-wrap text mt10" onclick="popOpenAndDim('pop_gender', true);">
+            <label for="">성별</label>
+            <input type="text" name="_gender" id="_gender" placeholder="선택하세요" class="ta-r" readonly>
+            <i></i>
+            <input type="hidden" name="gender" id="gender">
+        </div>
+        <div class="popup" id="pop_gender">
+            <p class="txt">당신의 성별을 선택해주세요</p>
+            <ul class="list mt15 selectList">
+                <li data-nm="gender" data-value="F" onclick="popClose('pop_gender');popOpenPass(this, 4);" >여자</li>
+                <li data-nm="gender" data-value="M" onclick="popClose('pop_gender');popOpenPass(this, 4);" >남자</li>
+            </ul>
+        </div>
+
+        <!-- 휴대폰 -->
+        <div class="input-wrap text mt10" onclick="popOpenAndDim('tel', true);">
+            <label for="">휴대폰 번호</label>
+            <input type="text" name="_tel" id="_tel" placeholder="선택하세요" class="ta-r" readonly>
+            <i></i>
+            
+            <input type="hidden" name="tel_check" value="N">
+        </div>
+        <div class="popup" id="tel">
+            <p class="txt mb15">본인 휴대폰 번호를 <br/>입력해 주세요.</p>
+            <hr>
+            <div class="input-wrap text mt15">
+                <input type="text" name="user_tel" id="user_tel" placeholder="'-'없이 번호만 입력해주세요." class="ta-c" maxlength="13" onkeyup="checkNumber(event)" >
+            </div>
+            <button type="button" class="btn lg bg-ff7b99 mt15" onclick="phoneValidation();">확&nbsp;인</button>
+        </div>
+    </div>
+</div>
+
+<!-- popup -->
+<div class="popup" id="acountDuplication">
+    <h2>이미 팅팅팅에 가입되어 있으세요!!</h2>
+    <p class="txt mt15 mb15"> <span class="color-ff7b99">아래 버튼</span>클릭하신 후에 <br/>
+        매니저님에게 연락해 보세요!</p>
+    <hr>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="window.open('https://bit.ly/3kSQJsw', '_blank');
+    popClose('acountDuplication');">담당매니저님께 연락하기</button>
+</div>
+
+<div class="popup" id="alertAge">
+    <p class="txt mt15 mb15">20세 ~ 53세까지만 가입가능 합니다</p>
+    <hr>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('alertAge');">확&nbsp;인</button>
+</div>
+
+<div class="popup" id="checkCertification">
+    <p class="txt mt15 mb15">인증되셨습니다.</p>
+    <hr>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('checkCertification');">확&nbsp;인</button>
+</div>
+
+<div class="popup" id="errorCertification">
+    <p class="txt mt15 mb15">인증 번호가 맞지 않습니다.<br>올바른 인증번호를 입력해주세요.</p>
+    <hr>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('errorCertification');popOpenAndDim('tel', true);">확&nbsp;인</button>
+</div>
+
+<div class="popup" id="termAgree">
+    <p class="txt mt15 mb15">사이트 이용약관</p>
+    <hr>
+    <textarea readonly style="width: 100%; height: 300px" id="termAgreeContent"></textarea>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('termAgree');">확&nbsp;인</button>
+</div>
+
+<div class="popup" id="privacyAgree">
+    <p class="txt mt15 mb15">개인정보 처리방침</p>
+    <hr>
+    <textarea readonly style="width: 100%; height: 300px" id="privacyAgreeContent"></textarea>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('privacyAgree');">확&nbsp;인</button>
+</div>
+
+<div class="popup" id="marketingAgree">
+    <p class="txt mt15 mb15">마케팅 정보 수신 동의</p>
+    <hr>
+    <textarea readonly style="width: 100%; height: 300px" id="marketingAgreeContent"></textarea>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('marketingAgree');">확&nbsp;인</button>
+</div>
+
+<script>
+// 약관 내용 로드
+$(document).ready(function() {
+    $('#termAgreeContent').load('/apply/check1.html');
+    $('#privacyAgreeContent').load('/apply/check2.html');
+    $('#marketingAgreeContent').load('/apply/check3.html');
+});
+</script>
+

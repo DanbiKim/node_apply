@@ -1,0 +1,96 @@
+<div class="sub join" id="photoPage">
+    <div class="container">
+        <div class="join-head">
+            <button type="button" class="btn-back" onclick="history.back()"></button>
+            <h1>프로필 사진 등록</h1>
+            <button type="button" class="btn-next" onclick="photoValidation()">다음</button>
+            <div class="progress-bar">
+                <span style="width: 60%;"></span>
+            </div>
+        </div>
+        <div class="tit-wrap mt25">
+            <p>얼굴 사진</p>
+            <a class="btn sm bg-f8db7d m_view_data" onclick="location.hash = 'M_photoGuidePage'">사진 등록 가이드</a>
+            <a class="btn sm bg-f8db7d f_view_data" onclick="location.hash = 'F_photoGuidePage'">사진 등록 가이드</a>
+        </div>
+        <hr class="mt15 mb15">
+        <ul class="photo-list photo-face-man">
+            <li data-name="img_1">
+                <p class="color-ff7b99">메인</p>
+                <img src="#" id="_img_1" style="max-width: 100%; height: auto; display: none;">
+            </li>
+            <li data-name="img_2">
+                <p class="color-ff7b99">필수</p>
+                <img src="#" id="_img_2" style="max-width: 100%; height: auto; display: none;">
+            </li>
+            <li data-name="img_3">
+                <p class="color-b9b9b9">선택</p>
+                <img src="#" id="_img_3" style="max-width: 100%; height: auto; display: none;">
+            </li>
+        </ul>
+        <p class="ta-l font14 mb15 color-ff7600">
+            안드로이드 기준 : 파일 → 갤러리 클릭<br/>
+            아이폰 기준 : 사진 보관함 클릭
+        </p>
+        <div class="tit-wrap mt45">
+            <p>전신 사진 또는 평소 패션 사진</p>
+        </div>
+        <hr class="mt15 mb15">
+        <ul class="photo-list photo-body-man">
+            <li data-name="img_4">
+                <p class="color-b9b9b9">선택</p>
+                <img src="#" id="_img_4" style="max-width: 100%; height: auto; display: none;">
+            </li>
+            <li data-name="img_5">
+                <p class="color-b9b9b9">선택</p>
+                <img src="#" id="_img_5" style="max-width: 100%; height: auto; display: none;">
+            </li>
+            <li data-name="img_6">
+                <p class="color-b9b9b9">선택</p>
+                <img src="#" id="_img_6" style="max-width: 100%; height: auto; display: none;">
+            </li>
+        </ul>
+
+        <input type="file" id="img_1" name="img_1" style="display: none;" />
+        <input type="file" id="img_2" name="img_2" style="display: none;" />
+        <input type="file" id="img_3" name="img_3" style="display: none;" />
+        <input type="file" id="img_4" name="img_4" style="display: none;" />
+        <input type="file" id="img_5" name="img_5" style="display: none;" />
+        <input type="file" id="img_6" name="img_6" style="display: none;" />
+        <input type="file" id="id_img" name="id_img" style="display: none;" />
+        <input type="file" id="job_img" name="job_img" style="display: none;" />
+
+
+        <div class="row certification-wrap mt45 ta-c">
+            <div class="col2">
+                <div>
+                    <div class="tit-wrap">
+                        <p>신분증 인증<span class="color-b9b9b9">(선택)</span></p>
+                    </div>
+                    <hr class="mt15 mb15">
+                    <div class="photo-wrap photo-certification" id="id_img_back" data-name="id_img" style="position: relative;">
+                        <div style="position: absolute; top: 8px;">
+                        <img src="#" id="_id_img" 
+                        style="max-width: 100%; height: 120px; display: none;">
+                        </div>
+                    </div>
+                    <a class="btn sm bg-f8db7d mt10" onclick="location.hash = 'idGuidePage'">신분증 등록 가이드</a>
+                </div>
+                <div>
+                    <div class="tit-wrap">
+                        <p>직업 인증<span class="color-b9b9b9">(선택)</span></p>
+                    </div>
+                    <hr class="mt15 mb15">
+                    <div class="photo-wrap photo-certification" id="job_img_back" data-name="job_img" style="position: relative;">
+                        <div style="position: absolute; top: 8px;">
+                        <img src="#" id="_job_img" 
+                        style="max-width: 100%; height: 120px; display: none;">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
