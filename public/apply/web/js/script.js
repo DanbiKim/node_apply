@@ -15,26 +15,26 @@ $(document).ready(function(){
     $('#F_photoGuidePage').hide();
     $('#idGuidePage').hide();
     
-    $('[id^="img_"]').change(function() {
+    $(document).on("change", '[id^="img_"]', function() {
         readURL(this);
     });
-    $('[id$="_img"]').change(function() {
+    $(document).on("change", '[id$="_img"]', function() {
 
         $('#'+$(this).attr('id')+'_back').attr('background','');
 
         readURL(this);
     });
 
-    $('.photo-list li').click(function() {
+    $(document).on("click", '.photo-list li', function() {
         var file_name = $(this).data('name');
         $("input[id='"+file_name+"']").click();
     });
-    $('.photo-certification').click(function() {
+    $(document).on("click", '.photo-certification', function() {
         var file_name = $(this).data('name');
         $("input[id='"+file_name+"']").click();
     });
 
-     // 이벤트 위임 사용 (동적으로 로드된 요소에도 작동)
+
      $(document).on("click", "#checkAll", function(){
         if($(this).is(":checked")){
             $("#check1").prop("checked", true);
@@ -48,7 +48,6 @@ $(document).ready(function(){
         }
     });     
 
-    // 이벤트 위임 사용 (동적으로 로드된 요소에도 작동)
     $(document).on("click", ".checkRadio", function(){
         if(!this.checked) {
             $("#checkAll").prop("checked", false);
@@ -72,7 +71,7 @@ $(document).ready(function(){
 
     // 지도 
     // 내 지역 
-    $('[id^="area"] .map-wrap label').click(function(){
+    $(document).on("click", '[id^="area"] .map-wrap label', function(){
         $('[id^="area"] .map-wrap label').removeClass('on');
 
         var $this = $(this);
@@ -102,7 +101,7 @@ $(document).ready(function(){
     // profile : 자신의 이미지 / 성격
     // condition : 원하는 상대의 조건 / 이성의 이미지
 
-    $('.arrayList li').on("click", function(){
+    $(document).on("click", '.arrayList li', function(){
         var $children = $(this).children();
         var $parent = $(this).parent();
         var maxCount = $parent.data('max')?$parent.data('max'):1;
@@ -149,7 +148,7 @@ $(document).ready(function(){
 
     });
 
-    $(".arrayBtn").on("click", function () {
+    $(document).on("click", ".arrayBtn", function () {
         var popupName = $(this).parent().attr("id");
         var nextPopup = $(this).prev(".arrayList").data("next");
         
@@ -159,8 +158,7 @@ $(document).ready(function(){
 
     // agree : 성별 
     // profile : 직업 키 체형 자차 흡연 음주 종교 군필 거주지역
-    
-    $(".selectList li").on("click", function() {
+    $(document).on("click", ".selectList li", function() {
         var $this = $(this);
         $this.siblings('li').removeClass("on");
         $this.addClass("on");
@@ -204,20 +202,20 @@ $(document).ready(function(){
         return this;
     };
 
-    $(".birthday").on("click", function() {
+    $(document).on("click", ".birthday", function() {
         $(".datepicker .year ul").scrollCenter(".on", 300);
         $(".datepicker .month ul").scrollCenter(".on", 300);
         $(".datepicker .day ul").scrollCenter(".on", 300);
     });
     
-    $("#birthday .datepicker > div ul li").on("click", function() {
+    $(document).on("click", "#birthday .datepicker > div ul li", function() {
         var $this = $(this);
         $this.siblings('li').removeClass("on");
         $this.addClass("on");
         $this.closest('ul').scrollCenter(".on", 300);
     });
 
-    $(".heightOpen").on("click", function() {  
+    $(document).on("click", ".heightOpen", function() {  
         var $this = $('#userHeight ul li');
         $this.siblings('li').removeClass("on");
 
