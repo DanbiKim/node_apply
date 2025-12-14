@@ -18,6 +18,7 @@ $(document).ready(function(){
     $(document).on("change", '[id^="img_"]', function() {
         readURL(this);
     });
+    
     $(document).on("change", '[id$="_img"]', function() {
 
         $('#'+$(this).attr('id')+'_back').attr('background','');
@@ -25,6 +26,7 @@ $(document).ready(function(){
         readURL(this);
     });
 
+     // 이벤트 위임 사용 (동적으로 로드된 요소에도 작동)
     $(document).on("click", '.photo-list li', function() {
         var file_name = $(this).data('name');
         $("input[id='"+file_name+"']").click();
@@ -36,16 +38,9 @@ $(document).ready(function(){
 
 
      $(document).on("click", "#checkAll", function(){
-        if($(this).is(":checked")){
-            $("#check1").prop("checked", true);
-            $("#check2").prop("checked", true);
-            $("#check3").prop("checked", true);
-        }else{
+        var isChecked = $(this).is(":checked");
+        $("#check1, #check2, #check3").prop("checked", isChecked);
 
-            $("#check1").prop("checked", false);
-            $("#check2").prop("checked", false);
-            $("#check3").prop("checked", false);
-        }
     });     
 
     $(document).on("click", ".checkRadio", function(){
@@ -54,17 +49,14 @@ $(document).ready(function(){
         }
 
         if($("#check1").is(":checked") && $("#check2").is(":checked") && $("#check3").is(":checked") ){
-
             $("#checkAll").prop("checked", true);
         }
     });  
 
+    // 팝업 외부 클릭 시 닫기
     $(document).mouseup(function (e) {
-
         var popup = $('div[class="popup on"]');
-
         if (popup.length > 0 && !popup.is(e.target) && popup.has(e.target).length === 0){
-            //pop 닫기 
             popClose(popup.attr('id'));
         }   
     });
@@ -97,10 +89,7 @@ $(document).ready(function(){
         });
     });
 
-    // li 밑에 input을 두고 array 로 데이터를 넘겨야 할때 
-    // profile : 자신의 이미지 / 성격
-    // condition : 원하는 상대의 조건 / 이성의 이미지
-
+    // 배열 리스트 선택 이벤트 (자신의 이미지/성격, 상대방 조건 등)
     $(document).on("click", '.arrayList li', function(){
         var $children = $(this).children();
         var $parent = $(this).parent();
@@ -120,18 +109,15 @@ $(document).ready(function(){
             }
         });
 
-
         if(sum > maxCount){
             $children.prop("checked", false);
         }
 
         if(sum == maxCount){
-            // debugger;
             popClose($parent.parent().attr("id"));
             if (nextPopup === 'idearAge' || nextPopup === 'coment') {
                 popOpenPass(this, 30);
-            }
-            else {
+            } else {
                 popOpenPass(this, 21);
             }
         }
@@ -144,17 +130,22 @@ $(document).ready(function(){
         });
 
         view_value = (view_value.length > 5) ? view_value.substr(0,5)+'...' : view_value;
-        $('#_'+$parent.parent().attr("id")).val(view_value)
-
+        
+        // characterType 팝업의 경우 _characterType input 업데이트
+        var popupId = $parent.parent().attr("id");
+        if(popupId === 'characterType') {
+            $('#_characterType').val(view_value);
+        } else {
+            $('#_'+popupId).val(view_value);
+        }
     });
 
     $(document).on("click", ".arrayBtn", function () {
         var popupName = $(this).parent().attr("id");
         var nextPopup = $(this).prev(".arrayList").data("next");
-        
         popClose(popupName);
         popOpenAndDim(nextPopup,true);   
-    })
+    });
 
     // agree : 성별 
     // profile : 직업 키 체형 자차 흡연 음주 종교 군필 거주지역
@@ -166,6 +157,15 @@ $(document).ready(function(){
         var value = $this.data('value');
         var inputName = $this.data('nm');
         var label = ($this.text().length > 5) ? $this.text().substr(0,5)+'...' : $this.text();
+
+        // #area 팝업의 경우 특별 처리 (data-nm이 없어도 처리)
+        // 단, 다른 selectList에는 영향을 주지 않도록 조건 명확화
+        var $popup = $this.closest('.popup');
+        if($popup.length > 0 && $popup.attr('id') === 'area' && !inputName) {
+            inputName = 'area';
+            value = $this.text().trim();
+            label = $this.text().trim();
+        }
 
         if(inputName){      
             $('#'+inputName).val(value);
@@ -182,13 +182,10 @@ $(document).ready(function(){
                 $('.f_view_data').show();
             }
         }
-
     }); 
 
-     
     // 달력 스크롤 위치 중앙정렬
     $.fn.scrollCenter = function(elem, speed) {
-    
         var active = $(this).find(elem);
         var activeHeight = active.height() / 2;
         var pos = active.position().top + activeHeight;
@@ -208,11 +205,16 @@ $(document).ready(function(){
         $(".datepicker .day ul").scrollCenter(".on", 300);
     });
     
-    $(document).on("click", "#birthday .datepicker > div ul li", function() {
+    // 생년월일 선택 이벤트 (이벤트 위임 사용)
+    // year, month, day의 li 요소 모두 선택
+    $(document).on("click", "#birthday #year li, #birthday #month li, #birthday #day li", function(e) {
+        e.stopPropagation(); // 이벤트 버블링 방지로 팝업 닫힘 방지
+        e.preventDefault(); // 기본 동작 방지
         var $this = $(this);
         $this.siblings('li').removeClass("on");
         $this.addClass("on");
         $this.closest('ul').scrollCenter(".on", 300);
+        console.log('Date selected:', $this.text(), $this.attr('value')); // 디버깅용
     });
 
     $(document).on("click", ".heightOpen", function() {  
@@ -428,6 +430,31 @@ function popOpenAndDim(id, isDim){
         return;
     }
     popOpen(id);
+    
+    // birthday 팝업이 열릴 때 스크롤 중앙 정렬
+    if(id === 'birthday') {
+        setTimeout(function() {
+            $(".datepicker .year ul").scrollCenter(".on", 300);
+            $(".datepicker .month ul").scrollCenter(".on", 300);
+            $(".datepicker .day ul").scrollCenter(".on", 300);
+        }, 100);
+    }
+    
+    // characterType, bodyWoman 팝업이 열릴 때 성별에 따라 리스트 표시
+    if(id === 'characterType' || id === 'bodyWoman') {
+        var gender = $('[name=gender]').val();
+        if(gender === 'M') {
+            $popup.find('.m_view_data').css('display', '');
+            $popup.find('.f_view_data').css('display', 'none');
+        } else if(gender === 'F') {
+            $popup.find('.m_view_data').css('display', 'none');
+            $popup.find('.f_view_data').css('display', '');
+        } else {
+            // 성별이 선택되지 않은 경우 둘 다 숨김
+            $popup.find('.m_view_data').css('display', 'none');
+            $popup.find('.f_view_data').css('display', 'none');
+        }
+    }
     
     if(isDim == true){
         dimMaker();

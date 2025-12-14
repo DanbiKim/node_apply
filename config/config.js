@@ -3,10 +3,11 @@ require('dotenv').config();
 module.exports = {
   port: process.env.PORT || 3000,
   db: {
-    host: process.env.DB_HOST || 'localhost',
-    user: process.env.DB_USER || 'root',
-    password: process.env.DB_PASSWORD || '',
-    database: process.env.DB_NAME || 'tingting',
+    host: process.env.DB_HOST || '115.68.102.13',
+    port: process.env.DB_PORT || 3306,
+    user: process.env.DB_USER || 'virginkr',
+    password: process.env.DB_PASSWORD || 'FZlXG4xLb5',
+    database: process.env.DB_NAME || 'virginkr',
     connectionLimit: 10
   },
   encryption: {

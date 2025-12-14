@@ -59,7 +59,583 @@
     <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('areaSeoul');popOpenPass(this, 21);">확&nbsp;인</button>
 </div>
 
-<!-- 나머지 지역 팝업들은 기존 profile.php에서 복사하여 추가 필요 -->
-<!-- (인천, 경기도, 대구, 부산, 대전, 광주, 울산, 강원도, 충청북도, 충청남도, 경상북도, 경상남도, 전라북도, 전라남도, 제주) -->
-<!-- 파일이 매우 길어서 주요 지역만 표시했습니다. 나머지는 필요시 추가하세요. -->
+<!-- 인천 -->
+<div class="popup" id="areaIncheon">
+    <p class="txt"><span class="color-ff7b99">인천</span> <br/>
+        어디에 거주하고 있을까요?</p>
+    <hr class="mt15 mb20">
+    <div class="map-wrap">
+        <!-- <img src="web/images/img_map_seoul.png" alt=""> -->
+        <input type="radio" name="incheon" value="인천강화군" id="incheon1">
+        <input type="radio" name="incheon" value="인천중구(영종도)" id="incheon2">
+        <input type="radio" name="incheon" value="인천서구" id="incheon3">
+        <input type="radio" name="incheon" value="인천계양구" id="incheon4">
+        <input type="radio" name="incheon" value="인천부평구" id="incheon5">
+        <input type="radio" name="incheon" value="인천동구" id="incheon6">
+        <input type="radio" name="incheon" value="인천중구" id="incheon7">
+        <input type="radio" name="incheon" value="인천남구" id="incheon8">
+        <input type="radio" name="incheon" value="인천연수구" id="incheon9">
+        <input type="radio" name="incheon" value="인천남동구" id="incheon10">
+        <label for="incheon1">강화군</label>
+        <label for="incheon2">중구(영종도)</label>
+        <label for="incheon3">서구</label>
+        <label for="incheon4">계양구</label>
+        <label for="incheon5">부평구</label>
+        <label for="incheon6">동구</label>
+        <label for="incheon7">중구</label>
+        <label for="incheon8">남구</label>
+        <label for="incheon9">연수구</label>
+        <label for="incheon10">남동구</label>
+    </div>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('areaIncheon');popOpenAndDim('pop_job', true);">확&nbsp;인</button>
+</div>
+
+<!-- 경기도 -->
+<div class="popup" id="areaGyeonggy">
+    <p class="txt"><span class="color-ff7b99">경기도</span> <br/>
+        어디에 거주하고 있을까요?</p>
+        <hr class="mt15 mb20">
+    <div class="map-wrap">
+        <input type="radio" name="gyeonggy" value="경기도연천" id="gyeonggy1">
+        <input type="radio" name="gyeonggy" value="경기도포천" id="gyeonggy2">
+        <input type="radio" name="gyeonggy" value="경기도파주" id="gyeonggy3">
+        <input type="radio" name="gyeonggy" value="경기도동두천" id="gyeonggy4">
+        <input type="radio" name="gyeonggy" value="경기도양주" id="gyeonggy5">
+        <input type="radio" name="gyeonggy" value="경기도가평" id="gyeonggy6">
+        <input type="radio" name="gyeonggy" value="경기도의정부" id="gyeonggy7">
+        <input type="radio" name="gyeonggy" value="경기도김포" id="gyeonggy8">
+        <input type="radio" name="gyeonggy" value="경기도고양" id="gyeonggy9">
+        <input type="radio" name="gyeonggy" value="경기도남양주" id="gyeonggy10">
+        <input type="radio" name="gyeonggy" value="경기도구리" id="gyeonggy11">
+        <input type="radio" name="gyeonggy" value="경기도하남" id="gyeonggy12">
+        <input type="radio" name="gyeonggy" value="경기도양평" id="gyeonggy13">
+        <input type="radio" name="gyeonggy" value="경기도부천" id="gyeonggy14">
+        <input type="radio" name="gyeonggy" value="경기도광명" id="gyeonggy15">
+        <input type="radio" name="gyeonggy" value="경기도과천" id="gyeonggy16">
+        <input type="radio" name="gyeonggy" value="경기도성남" id="gyeonggy17">
+        <input type="radio" name="gyeonggy" value="경기도광주" id="gyeonggy18">
+        <input type="radio" name="gyeonggy" value="경기도시흥" id="gyeonggy19">
+        <input type="radio" name="gyeonggy" value="경기도안양" id="gyeonggy20">
+        <input type="radio" name="gyeonggy" value="경기도의왕" id="gyeonggy21">
+        <input type="radio" name="gyeonggy" value="경기도군포" id="gyeonggy22">
+        <input type="radio" name="gyeonggy" value="경기도안산" id="gyeonggy23">
+        <input type="radio" name="gyeonggy" value="경기도수원" id="gyeonggy24">
+        <input type="radio" name="gyeonggy" value="경기도여주" id="gyeonggy25">
+        <input type="radio" name="gyeonggy" value="경기도이천" id="gyeonggy26">
+        <input type="radio" name="gyeonggy" value="경기도용인" id="gyeonggy27">
+        <input type="radio" name="gyeonggy" value="경기도화성" id="gyeonggy28">
+        <input type="radio" name="gyeonggy" value="경기도오산" id="gyeonggy29">
+        <input type="radio" name="gyeonggy" value="경기도안성" id="gyeonggy30">
+        <input type="radio" name="gyeonggy" value="경기도평택" id="gyeonggy31">
+        <label for="gyeonggy1">연천</label>
+        <label for="gyeonggy2">포천</label>
+        <label for="gyeonggy3">파주</label>
+        <label for="gyeonggy4">동두천</label>
+        <label for="gyeonggy5">양주</label>
+        <label for="gyeonggy6">가평</label>
+        <label for="gyeonggy7">의정부</label>
+        <label for="gyeonggy8">김포</label>
+        <label for="gyeonggy9">고양</label>
+        <label for="gyeonggy10">남양주</label>
+        <label for="gyeonggy11">구리</label>
+        <label for="gyeonggy12">하남</label>
+        <label for="gyeonggy13">양평</label>
+        <label for="gyeonggy14">부천</label>
+        <label for="gyeonggy15">광명</label>
+        <label for="gyeonggy16">과천</label>
+        <label for="gyeonggy17">성남</label>
+        <label for="gyeonggy18">광주</label>
+        <label for="gyeonggy19">시흥</label>
+        <label for="gyeonggy20">안양</label>
+        <label for="gyeonggy21">의왕</label>
+        <label for="gyeonggy22">군포</label>
+        <label for="gyeonggy23">안산</label>
+        <label for="gyeonggy24">수원</label>
+        <label for="gyeonggy25">여주</label>
+        <label for="gyeonggy26">이천</label>
+        <label for="gyeonggy27">용인</label>
+        <label for="gyeonggy28">화성</label>
+        <label for="gyeonggy29">오산</label>
+        <label for="gyeonggy30">안성</label>
+        <label for="gyeonggy31">평택</label>
+    </div>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('areaGyeonggy');popOpenAndDim('pop_job', true);">확&nbsp;인</button>
+</div>
+
+<!-- 대구 -->
+<div class="popup" id="areaDaegu">
+    <p class="txt"><span class="color-ff7b99">대구</span> <br/>
+        어디에 거주하고 있을까요?</p>
+    <hr class="mt15 mb20">
+    <div class="map-wrap">
+        <!-- <img src="web/images/img_map_seoul.png" alt=""> -->
+        <input type="radio" name="daegu" value="대구동구" id="daegu1">
+        <input type="radio" name="daegu" value="대구북구" id="daegu2">
+        <input type="radio" name="daegu" value="대구달성군" id="daegu3">
+        <input type="radio" name="daegu" value="대구서구" id="daegu4">
+        <input type="radio" name="daegu" value="대구중구" id="daegu5">
+        <input type="radio" name="daegu" value="대구남구" id="daegu6">
+        <input type="radio" name="daegu" value="대구수정구" id="daegu7">
+        <input type="radio" name="daegu" value="대구달서구" id="daegu8">
+        <input type="radio" name="daegu" value="대구달성군" id="daegu9">
+        <label for="daegu1">동구</label>
+        <label for="daegu2">북구</label>
+        <label for="daegu3">달성군</label>
+        <label for="daegu4">서구</label>
+        <label for="daegu5">중구</label>
+        <label for="daegu6">남구</label>
+        <label for="daegu7">수정구</label>
+        <label for="daegu8">달서구</label>
+        <label for="daegu9">달성군</label>
+    </div>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('areaDaegu');popOpenAndDim('pop_job', true);">확&nbsp;인</button>
+</div>
+
+<!-- 부산 -->
+<div class="popup" id="areaBusan">
+    <p class="txt"><span class="color-ff7b99">부산</span> <br/>
+        어디에 거주하고 있을까요?</p>
+    <hr class="mt15 mb20">
+    <div class="map-wrap">
+        <!-- <img src="web/images/img_map_seoul.png" alt=""> -->
+        <input type="radio" name="busan" value="부산기장군" id="busan1">
+        <input type="radio" name="busan" value="부산금정구" id="busan2">
+        <input type="radio" name="busan" value="부산북구" id="busan3">
+        <input type="radio" name="busan" value="부산동래구" id="busan4">
+        <input type="radio" name="busan" value="부산해운대구" id="busan5">
+        <input type="radio" name="busan" value="부산연제구" id="busan6">
+        <input type="radio" name="busan" value="부산부산진구" id="busan7">
+        <input type="radio" name="busan" value="부산수영구" id="busan8">
+        <input type="radio" name="busan" value="부산사상구" id="busan9">
+        <input type="radio" name="busan" value="부산동구" id="busan10">
+        <input type="radio" name="busan" value="부산상구" id="busan11">
+        <input type="radio" name="busan" value="부산서구" id="busan12">
+        <input type="radio" name="busan" value="부산강서구" id="busan13">
+        <input type="radio" name="busan" value="부산중구" id="busan14">
+        <input type="radio" name="busan" value="부산사하구" id="busan15">
+        <input type="radio" name="busan" value="부산영도구" id="busan16">
+        <label for="busan1">기장군</label>
+        <label for="busan2">금정구</label>
+        <label for="busan3">북구</label>
+        <label for="busan4">동래구</label>
+        <label for="busan5">해운대구</label>
+        <label for="busan6">연제구</label>
+        <label for="busan7">부산진구</label>
+        <label for="busan8">수영구</label>
+        <label for="busan9">사상구</label>
+        <label for="busan10">동구</label>
+        <label for="busan11">상구</label>
+        <label for="busan12">서구</label>
+        <label for="busan13">강서구</label>
+        <label for="busan14">중구</label>
+        <label for="busan15">사하구</label>
+        <label for="busan16">영도구</label>
+    </div>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('areaBusan');popOpenAndDim('pop_job', true);">확&nbsp;인</button>
+</div>
+
+<!-- 대전 -->
+<div class="popup" id="areaDaejeon">
+    <p class="txt"><span class="color-ff7b99">대전</span> <br/>
+        어디에 거주하고 있을까요?</p>
+    <hr class="mt15 mb20">
+    <div class="map-wrap">
+        <!-- <img src="web/images/img_map_seoul.png" alt=""> -->
+        <input type="radio" name="daejeon" value="대전대덕구" id="daejeon1">
+        <input type="radio" name="daejeon" value="대전유성구" id="daejeon2">
+        <input type="radio" name="daejeon" value="대전동구" id="daejeon3">
+        <input type="radio" name="daejeon" value="대전서구" id="daejeon4">
+        <input type="radio" name="daejeon" value="대전중구" id="daejeon5">
+        <label for="daejeon1">대덕구</label>
+        <label for="daejeon2">유성구</label>
+        <label for="daejeon3">동구</label>
+        <label for="daejeon4">서구</label>
+        <label for="daejeon5">중구</label>
+    </div>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('areaDaejeon');popOpenAndDim('pop_job', true);">확&nbsp;인</button>
+</div>
+
+<!-- 광주 -->
+<div class="popup" id="areaGwangju">
+    <p class="txt"><span class="color-ff7b99">광주</span> <br/>
+        어디에 거주하고 있을까요?</p>
+    <hr class="mt15 mb20">
+    <div class="map-wrap">
+        <!-- <img src="web/images/img_map_seoul.png" alt=""> -->
+        <input type="radio" name="gwangju" value="광주북구" id="gwangju1">
+        <input type="radio" name="gwangju" value="광주광산구" id="gwangju2">
+        <input type="radio" name="gwangju" value="광주서구" id="gwangju3">
+        <input type="radio" name="gwangju" value="광주동구" id="gwangju4">
+        <input type="radio" name="gwangju" value="광주남구" id="gwangju5">
+        <label for="gwangju1">북구</label>
+        <label for="gwangju2">광산구</label>
+        <label for="gwangju3">서구</label>
+        <label for="gwangju4">동구</label>
+        <label for="gwangju5">남구</label>
+    </div>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('areaGwangju');popOpenAndDim('pop_job', true);">확&nbsp;인</button>
+</div>
+
+<!-- 울산 -->
+<div class="popup" id="areaUlsan">
+    <p class="txt"><span class="color-ff7b99">울산</span> <br/>
+        어디에 거주하고 있을까요?</p>
+    <hr class="mt15 mb20">
+    <div class="map-wrap">
+        <!-- <img src="web/images/img_map_seoul.png" alt=""> -->
+        <input type="radio" name="ulsan" value="울산북구" id="ulsan1">
+        <input type="radio" name="ulsan" value="울산중구" id="ulsan2">
+        <input type="radio" name="ulsan" value="울산울주군" id="ulsan3">
+        <input type="radio" name="ulsan" value="울산동구" id="ulsan4">
+        <input type="radio" name="ulsan" value="울산남구" id="ulsan5">
+        <label for="ulsan1">북구</label>
+        <label for="ulsan2">중구</label>
+        <label for="ulsan3">울주군</label>
+        <label for="ulsan4">동구</label>
+        <label for="ulsan5">남구</label>
+    </div>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('areaUlsan');popOpenAndDim('pop_job', true);">확&nbsp;인</button>
+</div>
+
+<!-- 강원도 -->
+<div class="popup" id="areaGangwon">
+    <p class="txt"><span class="color-ff7b99">강원도</span> <br/>
+        어디에 거주하고 있을까요?</p>
+    <hr class="mt15 mb20">
+    <div class="map-wrap">
+        <!-- <img src="web/images/img_map_seoul.png" alt=""> -->
+        <input type="radio" name="gangwon" value="강원도고성" id="gangwon1">
+        <input type="radio" name="gangwon" value="강원도철원" id="gangwon2">
+        <input type="radio" name="gangwon" value="강원도양구" id="gangwon3">
+        <input type="radio" name="gangwon" value="강원도화천" id="gangwon4">
+        <input type="radio" name="gangwon" value="강원도속초" id="gangwon5">
+        <input type="radio" name="gangwon" value="강원도인제" id="gangwon6">
+        <input type="radio" name="gangwon" value="강원도양양" id="gangwon7">
+        <input type="radio" name="gangwon" value="강원도춘천" id="gangwon8">
+        <input type="radio" name="gangwon" value="강원도홍천" id="gangwon9">
+        <input type="radio" name="gangwon" value="강원도강릉" id="gangwon10">
+        <input type="radio" name="gangwon" value="강원도횡성" id="gangwon11">
+        <input type="radio" name="gangwon" value="강원도평창" id="gangwon12">
+        <input type="radio" name="gangwon" value="강원도동해" id="gangwon13">
+        <input type="radio" name="gangwon" value="강원도정선" id="gangwon14">
+        <input type="radio" name="gangwon" value="강원도원주" id="gangwon15">
+        <input type="radio" name="gangwon" value="강원도삼척" id="gangwon16">
+        <input type="radio" name="gangwon" value="강원도영월" id="gangwon17">
+        <input type="radio" name="gangwon" value="강원도태백" id="gangwon18">
+        <label for="gangwon1">고성</label>
+        <label for="gangwon2">철원</label>
+        <label for="gangwon3">양구</label>
+        <label for="gangwon4">화천</label>
+        <label for="gangwon5">속초</label>
+        <label for="gangwon6">인제</label>
+        <label for="gangwon7">양양</label>
+        <label for="gangwon8">춘천</label>
+        <label for="gangwon9">홍천</label>
+        <label for="gangwon10">강릉</label>
+        <label for="gangwon11">횡성</label>
+        <label for="gangwon12">평창</label>
+        <label for="gangwon13">동해</label>
+        <label for="gangwon14">정선</label>
+        <label for="gangwon15">원주</label>
+        <label for="gangwon16">삼척</label>
+        <label for="gangwon17">영월</label>
+        <label for="gangwon18">태백</label>
+    </div>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('areaGangwon');popOpenAndDim('pop_job', true);">확&nbsp;인</button>
+</div>
+
+<!-- 충천북도 -->
+<div class="popup" id="areaChungcheongbuk">
+    <p class="txt"><span class="color-ff7b99">충천북도</span> <br/>
+        어디에 거주하고 있을까요?</p>
+    <hr class="mt15 mb20">
+    <div class="map-wrap">
+        <!-- <img src="web/images/img_map_seoul.png" alt=""> -->
+        <input type="radio" name="chungcheongbuk" value="충청북도제천" id="chungcheongbuk1">
+        <input type="radio" name="chungcheongbuk" value="충청북도충주" id="chungcheongbuk2">
+        <input type="radio" name="chungcheongbuk" value="충청북도단양" id="chungcheongbuk3">
+        <input type="radio" name="chungcheongbuk" value="충청북도음성" id="chungcheongbuk4">
+        <input type="radio" name="chungcheongbuk" value="충청북도진천" id="chungcheongbuk5">
+        <input type="radio" name="chungcheongbuk" value="충청북도증평" id="chungcheongbuk6">
+        <input type="radio" name="chungcheongbuk" value="충청북도괴산" id="chungcheongbuk7">
+        <input type="radio" name="chungcheongbuk" value="충청북도청원" id="chungcheongbuk8">
+        <input type="radio" name="chungcheongbuk" value="충청북도청주" id="chungcheongbuk9">
+        <input type="radio" name="chungcheongbuk" value="충청북도보은" id="chungcheongbuk10">
+        <input type="radio" name="chungcheongbuk" value="충청북도옥천" id="chungcheongbuk11">
+        <input type="radio" name="chungcheongbuk" value="충청북도영동" id="chungcheongbuk12">
+        <label for="chungcheongbuk1">제천</label>
+        <label for="chungcheongbuk2">충주</label>
+        <label for="chungcheongbuk3">단양</label>
+        <label for="chungcheongbuk4">음성</label>
+        <label for="chungcheongbuk5">진천</label>
+        <label for="chungcheongbuk6">증평</label>
+        <label for="chungcheongbuk7">괴산</label>
+        <label for="chungcheongbuk8">청원</label>
+        <label for="chungcheongbuk9">청주</label>
+        <label for="chungcheongbuk10">보은</label>
+        <label for="chungcheongbuk11">옥천</label>
+        <label for="chungcheongbuk12">영동</label>
+    </div>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('areaChungcheongbuk');popOpenAndDim('pop_job', true);">확&nbsp;인</button>
+</div>
+
+<!-- 충청남도 -->
+<div class="popup" id="areaChungcheongnam">
+    <p class="txt"><span class="color-ff7b99">충청남도</span> <br/>
+        어디에 거주하고 있을까요?</p>
+    <hr class="mt15 mb20">
+    <div class="map-wrap">
+        <!-- <img src="web/images/img_map_seoul.png" alt=""> -->
+        <input type="radio" name="chungcheongnam" value="충청남도당진" id="chungcheongnam1">
+        <input type="radio" name="chungcheongnam" value="충청남도천안" id="chungcheongnam2">
+        <input type="radio" name="chungcheongnam" value="충청남도아산" id="chungcheongnam3">
+        <input type="radio" name="chungcheongnam" value="충청남도태안" id="chungcheongnam4">
+        <input type="radio" name="chungcheongnam" value="충청남도서산" id="chungcheongnam5">
+        <input type="radio" name="chungcheongnam" value="충청남도예산" id="chungcheongnam6">
+        <input type="radio" name="chungcheongnam" value="충청남도홍성" id="chungcheongnam7">
+        <input type="radio" name="chungcheongnam" value="충청남도공주" id="chungcheongnam8">
+        <input type="radio" name="chungcheongnam" value="충청남도청양" id="chungcheongnam9">
+        <input type="radio" name="chungcheongnam" value="충청남도보령" id="chungcheongnam10">
+        <input type="radio" name="chungcheongnam" value="충청남도계룡" id="chungcheongnam11">
+        <input type="radio" name="chungcheongnam" value="충청남도부여" id="chungcheongnam12">
+        <input type="radio" name="chungcheongnam" value="충청남도논산" id="chungcheongnam13">
+        <input type="radio" name="chungcheongnam" value="충청남도서천" id="chungcheongnam14">
+        <input type="radio" name="chungcheongnam" value="충청남도금산" id="chungcheongnam15">
+        <label for="chungcheongnam1">당진</label>
+        <label for="chungcheongnam2">천안</label>
+        <label for="chungcheongnam3">아산</label>
+        <label for="chungcheongnam4">태안</label>
+        <label for="chungcheongnam5">서산</label>
+        <label for="chungcheongnam6">예산</label>
+        <label for="chungcheongnam7">홍성</label>
+        <label for="chungcheongnam8">공주</label>
+        <label for="chungcheongnam9">청양</label>
+        <label for="chungcheongnam10">보령</label>
+        <label for="chungcheongnam11">계룡</label>
+        <label for="chungcheongnam12">부여</label>
+        <label for="chungcheongnam13">논산</label>
+        <label for="chungcheongnam14">서천</label>
+        <label for="chungcheongnam15">금산</label>
+    </div>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('areaChungcheongnam');popOpenAndDim('pop_job', true);">확&nbsp;인</button>
+</div>
+
+<!-- 경상북도 -->
+<div class="popup" id="areaGyeongsangbuk">
+    <p class="txt"><span class="color-ff7b99">경기도</span> <br/>
+        어디에 거주하고 있을까요?</p>
+        <hr class="mt15 mb20">
+    <div class="map-wrap">
+        <input type="radio" name="gyeongsangbuk" value="경상북도울진" id="gyeongsangbuk1">
+        <input type="radio" name="gyeongsangbuk" value="경상북도봉화" id="gyeongsangbuk2">
+        <input type="radio" name="gyeongsangbuk" value="경상북도영주" id="gyeongsangbuk3">
+        <input type="radio" name="gyeongsangbuk" value="경상북도울릉도" id="gyeongsangbuk4">
+        <input type="radio" name="gyeongsangbuk" value="경상북도영양" id="gyeongsangbuk5">
+        <input type="radio" name="gyeongsangbuk" value="경상북도독도" id="gyeongsangbuk6">
+        <input type="radio" name="gyeongsangbuk" value="경상북도문경" id="gyeongsangbuk7">
+        <input type="radio" name="gyeongsangbuk" value="경상북도예천" id="gyeongsangbuk8">
+        <input type="radio" name="gyeongsangbuk" value="경상북도안동" id="gyeongsangbuk9">
+        <input type="radio" name="gyeongsangbuk" value="경상북도영덕" id="gyeongsangbuk10">
+        <input type="radio" name="gyeongsangbuk" value="경상북도상주" id="gyeongsangbuk11">
+        <input type="radio" name="gyeongsangbuk" value="경상북도의성" id="gyeongsangbuk12">
+        <input type="radio" name="gyeongsangbuk" value="경상북도청송" id="gyeongsangbuk13">
+        <input type="radio" name="gyeongsangbuk" value="경상북도구미" id="gyeongsangbuk14">
+        <input type="radio" name="gyeongsangbuk" value="경상북도포항" id="gyeongsangbuk15">
+        <input type="radio" name="gyeongsangbuk" value="경상북도군위" id="gyeongsangbuk16">
+        <input type="radio" name="gyeongsangbuk" value="경상북도김천" id="gyeongsangbuk17">
+        <input type="radio" name="gyeongsangbuk" value="경상북도영천" id="gyeongsangbuk18">
+        <input type="radio" name="gyeongsangbuk" value="경상북도칠곡" id="gyeongsangbuk19">
+        <input type="radio" name="gyeongsangbuk" value="경상북도성주" id="gyeongsangbuk20">
+        <input type="radio" name="gyeongsangbuk" value="경상북도경주" id="gyeongsangbuk21">
+        <input type="radio" name="gyeongsangbuk" value="경상북도경산" id="gyeongsangbuk22">
+        <input type="radio" name="gyeongsangbuk" value="경상북도고령" id="gyeongsangbuk23">
+        <input type="radio" name="gyeongsangbuk" value="경상북도청도" id="gyeongsangbuk24">
+        <label for="gyeongsangbuk1">울진</label>
+        <label for="gyeongsangbuk2">봉화</label>
+        <label for="gyeongsangbuk3">영주</label>
+        <label for="gyeongsangbuk4">울릉도</label>
+        <label for="gyeongsangbuk5">영양</label>
+        <label for="gyeongsangbuk6">독도</label>
+        <label for="gyeongsangbuk7">문경</label>
+        <label for="gyeongsangbuk8">예천</label>
+        <label for="gyeongsangbuk9">안동</label>
+        <label for="gyeongsangbuk10">영덕</label>
+        <label for="gyeongsangbuk11">상주</label>
+        <label for="gyeongsangbuk12">의성</label>
+        <label for="gyeongsangbuk13">청송</label>
+        <label for="gyeongsangbuk14">구미</label>
+        <label for="gyeongsangbuk15">포항</label>
+        <label for="gyeongsangbuk16">군위</label>
+        <label for="gyeongsangbuk17">김천</label>
+        <label for="gyeongsangbuk18">영천</label>
+        <label for="gyeongsangbuk19">칠곡</label>
+        <label for="gyeongsangbuk20">성주</label>
+        <label for="gyeongsangbuk21">경주</label>
+        <label for="gyeongsangbuk22">경산</label>
+        <label for="gyeongsangbuk23">고령</label>
+        <label for="gyeongsangbuk24">청도</label>
+    </div>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('areaGyeongsangbuk');popOpenAndDim('pop_job', true);">확&nbsp;인</button>
+</div>
+
+<!-- 경상남도 -->
+<div class="popup" id="areaGyeongsangnam">
+    <p class="txt"><span class="color-ff7b99">경상남도</span> <br/>
+        어디에 거주하고 있을까요?</p>
+    <hr class="mt15 mb20">
+    <div class="map-wrap">
+        <!-- <img src="web/images/img_map_seoul.png" alt=""> -->
+        <input type="radio" name="gyeongsangnam" value="경상남도거창" id="gyeongsangnam1">
+        <input type="radio" name="gyeongsangnam" value="경상남도함양" id="gyeongsangnam2">
+        <input type="radio" name="gyeongsangnam" value="경상남도합천" id="gyeongsangnam3">
+        <input type="radio" name="gyeongsangnam" value="경상남도창녕" id="gyeongsangnam4">
+        <input type="radio" name="gyeongsangnam" value="경상남도밀양" id="gyeongsangnam5">
+        <input type="radio" name="gyeongsangnam" value="경상남도의령" id="gyeongsangnam6">
+        <input type="radio" name="gyeongsangnam" value="경상남도양산" id="gyeongsangnam7">
+        <input type="radio" name="gyeongsangnam" value="경상남도산청" id="gyeongsangnam8">
+        <input type="radio" name="gyeongsangnam" value="경상남도함안" id="gyeongsangnam9">
+        <input type="radio" name="gyeongsangnam" value="경상남도김해" id="gyeongsangnam10">
+        <input type="radio" name="gyeongsangnam" value="경상남도창원" id="gyeongsangnam11">
+        <input type="radio" name="gyeongsangnam" value="경상남도진주" id="gyeongsangnam12">
+        <input type="radio" name="gyeongsangnam" value="경상남도하동" id="gyeongsangnam13">
+        <input type="radio" name="gyeongsangnam" value="경상남도사천" id="gyeongsangnam14">
+        <input type="radio" name="gyeongsangnam" value="경상남도고성" id="gyeongsangnam15">
+        <input type="radio" name="gyeongsangnam" value="경상남도통영" id="gyeongsangnam16">
+        <input type="radio" name="gyeongsangnam" value="경상남도거제" id="gyeongsangnam17">
+        <input type="radio" name="gyeongsangnam" value="경상남도남해" id="gyeongsangnam18">
+        <label for="gyeongsangnam1">거창</label>
+        <label for="gyeongsangnam2">함양</label>
+        <label for="gyeongsangnam3">합천</label>
+        <label for="gyeongsangnam4">창녕</label>
+        <label for="gyeongsangnam5">밀양</label>
+        <label for="gyeongsangnam6">의령</label>
+        <label for="gyeongsangnam7">양산</label>
+        <label for="gyeongsangnam8">산청</label>
+        <label for="gyeongsangnam9">함안</label>
+        <label for="gyeongsangnam10">김해</label>
+        <label for="gyeongsangnam11">창원</label>
+        <label for="gyeongsangnam12">진주</label>
+        <label for="gyeongsangnam13">하동</label>
+        <label for="gyeongsangnam14">사천</label>
+        <label for="gyeongsangnam15">고성</label>
+        <label for="gyeongsangnam16">통영</label>
+        <label for="gyeongsangnam17">거제</label>
+        <label for="gyeongsangnam18">남해</label>
+    </div>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('areaGyeongsangnam');popOpenAndDim('pop_job', true);">확&nbsp;인</button>
+</div>
+
+<!-- 전라북도 -->
+<div class="popup" id="areaJeollabuk">
+    <p class="txt"><span class="color-ff7b99">전라북도</span> <br/>
+        어디에 거주하고 있을까요?</p>
+    <hr class="mt15 mb20">
+    <div class="map-wrap">
+        <!-- <img src="web/images/img_map_seoul.png" alt=""> -->
+        <input type="radio" name="jeollabuk" value="전라북도익산" id="jeollabuk1">
+        <input type="radio" name="jeollabuk" value="전라북도군산" id="jeollabuk2">
+        <input type="radio" name="jeollabuk" value="전라북도완주" id="jeollabuk3">
+        <input type="radio" name="jeollabuk" value="전라북도무주" id="jeollabuk4">
+        <input type="radio" name="jeollabuk" value="전라북도전주" id="jeollabuk5">
+        <input type="radio" name="jeollabuk" value="전라북도김제" id="jeollabuk6">
+        <input type="radio" name="jeollabuk" value="전라북도진안" id="jeollabuk7">
+        <input type="radio" name="jeollabuk" value="전라북도부안" id="jeollabuk8">
+        <input type="radio" name="jeollabuk" value="전라북도장수" id="jeollabuk9">
+        <input type="radio" name="jeollabuk" value="전라북도정읍" id="jeollabuk10">
+        <input type="radio" name="jeollabuk" value="전라북도임실" id="jeollabuk11">
+        <input type="radio" name="jeollabuk" value="전라북도고창" id="jeollabuk12">
+        <input type="radio" name="jeollabuk" value="전라북도남원" id="jeollabuk13">
+        <input type="radio" name="jeollabuk" value="전라북도순창" id="jeollabuk14">
+        <label for="jeollabuk1">익산</label>
+        <label for="jeollabuk2">군산</label>
+        <label for="jeollabuk3">완주</label>
+        <label for="jeollabuk4">무주</label>
+        <label for="jeollabuk5">전주</label>
+        <label for="jeollabuk6">김제</label>
+        <label for="jeollabuk7">진안</label>
+        <label for="jeollabuk8">부안</label>
+        <label for="jeollabuk9">장수</label>
+        <label for="jeollabuk10">정읍</label>
+        <label for="jeollabuk11">임실</label>
+        <label for="jeollabuk12">고창</label>
+        <label for="jeollabuk13">남원</label>
+        <label for="jeollabuk14">순창</label>
+    </div>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('areaJeollabuk');popOpenAndDim('pop_job', true);">확&nbsp;인</button>
+</div>
+
+<!-- 전라남도 -->
+<div class="popup" id="areaJeollanam">
+    <p class="txt"><span class="color-ff7b99">전라남도</span> <br/>
+        어디에 거주하고 있을까요?</p>
+        <hr class="mt15 mb20">
+    <div class="map-wrap">
+        <input type="radio" name="jeollanam" value="전라남도장성" id="jeollanam1">
+        <input type="radio" name="jeollanam" value="전라남도담양" id="jeollanam2">
+        <input type="radio" name="jeollanam" value="전라남도영광" id="jeollanam3">
+        <input type="radio" name="jeollanam" value="전라남도구례" id="jeollanam4">
+        <input type="radio" name="jeollanam" value="전라남도곡성" id="jeollanam5">
+        <input type="radio" name="jeollanam" value="전라남도함평" id="jeollanam6">
+        <input type="radio" name="jeollanam" value="전라남도화순" id="jeollanam7">
+        <input type="radio" name="jeollanam" value="전라남도나주" id="jeollanam8">
+        <input type="radio" name="jeollanam" value="전라남도광양" id="jeollanam9">
+        <input type="radio" name="jeollanam" value="전라남도순천" id="jeollanam10">
+        <input type="radio" name="jeollanam" value="전라남도무안" id="jeollanam11">
+        <input type="radio" name="jeollanam" value="전라남도신안" id="jeollanam12">
+        <input type="radio" name="jeollanam" value="전라남도목포" id="jeollanam13">
+        <input type="radio" name="jeollanam" value="전라남도보성" id="jeollanam14">
+        <input type="radio" name="jeollanam" value="전라남도영암" id="jeollanam15">
+        <input type="radio" name="jeollanam" value="전라남도여수" id="jeollanam16">
+        <input type="radio" name="jeollanam" value="전라남도장홍" id="jeollanam17">
+        <input type="radio" name="jeollanam" value="전라남도강진" id="jeollanam18">
+        <input type="radio" name="jeollanam" value="전라남도고흥" id="jeollanam19">
+        <input type="radio" name="jeollanam" value="전라남도해남" id="jeollanam20">
+        <input type="radio" name="jeollanam" value="전라남도진도" id="jeollanam21">
+        <input type="radio" name="jeollanam" value="전라남도완도" id="jeollanam22">
+        <label for="jeollanam1">장성</label>
+        <label for="jeollanam2">담양</label>
+        <label for="jeollanam3">영광</label>
+        <label for="jeollanam4">구례</label>
+        <label for="jeollanam5">곡성</label>
+        <label for="jeollanam6">함평</label>
+        <label for="jeollanam7">화순</label>
+        <label for="jeollanam8">나주</label>
+        <label for="jeollanam9">광양</label>
+        <label for="jeollanam10">순천</label>
+        <label for="jeollanam11">무안</label>
+        <label for="jeollanam12">신안</label>
+        <label for="jeollanam13">목포</label>
+        <label for="jeollanam14">보성</label>
+        <label for="jeollanam15">영암</label>
+        <label for="jeollanam16">여수</label>
+        <label for="jeollanam17">장홍</label>
+        <label for="jeollanam18">강진</label>
+        <label for="jeollanam19">고흥</label>
+        <label for="jeollanam20">해남</label>
+        <label for="jeollanam21">진도</label>
+        <label for="jeollanam22">완도</label>
+    </div>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('areaJeollanam');popOpenAndDim('pop_job', true);">확&nbsp;인</button>
+</div>
+
+<!-- 광주 -->
+<div class="popup" id="areaJeju">
+    <p class="txt"><span class="color-ff7b99">제주</span> <br/>
+        어디에 거주하고 있을까요?</p>
+    <hr class="mt15 mb20">
+    <div class="map-wrap">
+        <!-- <img src="web/images/img_map_seoul.png" alt=""> -->
+        <input type="radio" name="jeju" value="제주우도" id="jeju1">
+        <input type="radio" name="jeju" value="제주제주" id="jeju2">
+        <input type="radio" name="jeju" value="제주서귀포" id="jeju3">
+        <input type="radio" name="jeju" value="제주가파도" id="jeju4">
+        <input type="radio" name="jeju" value="제주마라도" id="jeju5">
+        <label for="jeju1">우도</label>
+        <label for="jeju2">제주</label>
+        <label for="jeju3">서귀포</label>
+        <label for="jeju4">가파도</label>
+        <label for="jeju5">마라도</label>
+    </div>
+    <button type="button" class="btn lg bg-ff7b99 mt15" onclick="popClose('areaJeju');popOpenAndDim('pop_job', true);">확&nbsp;인</button>
+</div>
 

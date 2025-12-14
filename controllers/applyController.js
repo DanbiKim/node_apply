@@ -19,14 +19,14 @@ async function checkPhone(req, res) {
     // 하이픈 제거
     const cleanPhone = user_tel.replace(/[^0-9]/g, '');
     
-    // const isDuplicate = await userModel.checkPhoneDuplicate(cleanPhone);
+    const isDuplicate = await userModel.checkPhoneDuplicate(cleanPhone);
     
-    // if (isDuplicate) {
-    //   return res.json({
-    //     success: false,
-    //     message: '이미 가입되어 있는 번호입니다. 매니저와 컨택해 주세요.'
-    //   });
-    // }
+    if (isDuplicate) {
+      return res.json({
+        success: false,
+        message: '이미 가입되어 있는 번호입니다. 매니저와 컨택해 주세요.'
+      });
+    }
     
     res.json({
       success: true,
