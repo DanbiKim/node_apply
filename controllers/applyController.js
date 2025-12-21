@@ -68,11 +68,18 @@ async function register(req, res) {
     }
     
     // 사용자 정보 저장
+    console.log('========== DB 저장 시작 ==========');
+    console.log('DB 연결 상태:', require('../utils/db').isAvailable() ? '연결됨' : '연결 안됨');
+    console.log('저장할 사용자 데이터 키:', Object.keys(userData).join(', '));
+    
     const userId = await userModel.createUser(userData);
+    console.log('✅ 사용자 저장 성공, userId:', userId);
     
     // 파일 경로 업데이트
     if (Object.keys(filePaths).length > 0) {
+      console.log('파일 경로 업데이트 시작:', filePaths);
       await userModel.updateUser(userId, filePaths);
+      console.log('✅ 파일 경로 업데이트 성공');
     }
     
     // SMS 발송
@@ -95,10 +102,15 @@ async function register(req, res) {
       userId: userId
     });
   } catch (error) {
-    console.error('Register error:', error);
+    console.error('========== Register Error ==========');
+    console.error('에러 메시지:', error.message);
+    console.error('에러 스택:', error.stack);
+    console.error('에러 전체:', error);
+    console.error('=====================================');
     res.status(500).json({
       success: false,
-      message: '등록에 실패하였습니다.'
+      message: '등록에 실패하였습니다.',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
 }

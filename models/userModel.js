@@ -15,7 +15,7 @@ async function checkPhoneDuplicate(phoneNumber) {
     const encrypted1 = encrypt(phoneNumber);
     const encrypted2 = encrypt(phoneNumber.replace(/-/g, ''));
     const encrypted3 = encrypt(phoneNumber.replace(/[^0-9]/g, ''));
-    
+ 
     const [rows] = await pool.execute(
       `SELECT COUNT(*) AS count FROM user 
        WHERE user_tel IN (?, ?, ?) 
@@ -37,50 +37,77 @@ async function checkPhoneDuplicate(phoneNumber) {
  */
 async function createUser(userData) {
   if (!isAvailable()) {
+    console.error('❌ DB 연결 불가: isAvailable() = false');
     throw new Error('Database not available');
   }
   
   try {
+    if (!userData.user_name) {
+      throw new Error('이름을 입력해주세요.');
+    }
+    if (!userData.user_tel) {
+      throw new Error('번호를 정확히 입력해주세요.');
+    }
+  
     // 전화번호 암호화
-    const phoneNumber = userData.user_tel;
-    userData.user_tel = encrypt(phoneNumber);
-    
-    // 배열 필드를 콤마로 구분된 문자열로 변환
-    if (Array.isArray(userData.charm)) {
-      userData.charm = userData.charm.join(',');
+    userData.user_tel = encrypt(userData.user_tel);
+  
+    // 배열 처리
+    ['charm','ideal_charm','ideal_first'].forEach(k => {
+      if (Array.isArray(userData[k])) userData[k] = userData[k].join(',');
+    });
+    ['feel_user','feel_ideal'].forEach(k => {
+      if (Array.isArray(userData[k])) userData[k] = userData[k].join('');
+    });
+  
+    // check 처리
+    if (userData.checkAll === 'on') {
+      userData.check1 = 'on';
+      userData.check2 = 'on';
+      userData.check3 = 'on';
     }
-    if (Array.isArray(userData.ideal_charm)) {
-      userData.ideal_charm = userData.ideal_charm.join(',');
-    }
-    if (Array.isArray(userData.ideal_first)) {
-      userData.ideal_first = userData.ideal_first.join(',');
-    }
-    if (Array.isArray(userData.feel_user)) {
-      userData.feel_user = userData.feel_user.join(',');
-    }
-    if (Array.isArray(userData.feel_ideal)) {
-      userData.feel_ideal = userData.feel_ideal.join(',');
-    }
-    
-    // 기본값 설정
-    userData.dolsing_yn = userData.dolsing_yn || 'N';
-    userData.children_yn = userData.children_yn || 'N';
+  
+    userData.profile_YN = userData.check1 === 'on' ? 'Y' : userData.profile_YN || 'Y';
+    userData.request_YN = userData.check2 === 'on' ? 'Y' : userData.request_YN || 'N';
+  
+    delete userData.checkAll;
+    delete userData.check1;
+    delete userData.check2;
+    delete userData.check3;
+    delete userData.tel_check;
+  
+    // _필드 제거
+    Object.keys(userData).forEach(k => {
+      if (k.startsWith('_')) delete userData[k];
+    });
+  
+    // 기본값
     userData.alim_manager = userData.alim_manager || '49';
     userData.alim_manager_name = userData.alim_manager_name || '최승호매니저';
-    
-    // 필드 목록 생성
+  
+    // whitelist 필터
+    // Object.keys(userData).forEach(k => {
+    //   if (!ALLOWED_FIELDS.has(k)) delete userData[k];
+    // });
+  
     const fields = Object.keys(userData);
-    const placeholders = fields.map(() => '?').join(', ');
-    const values = fields.map(field => userData[field]);
-    
-    const [result] = await pool.execute(
-      `INSERT INTO user (${fields.join(', ')}) VALUES (${placeholders})`,
-      values
-    );
-    
+    const values = Object.values(userData);
+  
+    const sql = `
+      INSERT INTO user (${fields.join(', ')})
+      VALUES (${fields.map(() => '?').join(', ')})
+    `;
+  
+    const [result] = await pool.execute(sql, values);
     return result.insertId;
   } catch (error) {
-    console.error('User creation error:', error);
+    console.error('========== User Creation Error ==========');
+    console.error('에러 메시지:', error.message);
+    console.error('에러 코드:', error.code);
+    console.error('에러 SQL:', error.sql);
+    console.error('에러 스택:', error.stack);
+    console.error('에러 전체:', error);
+    console.error('=========================================');
     throw error;
   }
 }
@@ -132,10 +159,10 @@ async function saveSMSLog(logData) {
     const placeholders = fields.map(() => '?').join(', ');
     const values = fields.map(field => logData[field]);
     
-    await pool.execute(
-      `INSERT INTO alimtalk_log (${fields.join(', ')}) VALUES (${placeholders})`,
-      values
-    );
+    // await pool.execute(
+    //   `INSERT INTO alimtalk_log (${fields.join(', ')}) VALUES (${placeholders})`,
+    //   values
+    // );
     
     return true;
   } catch (error) {

@@ -440,19 +440,27 @@ function popOpenAndDim(id, isDim){
         }, 100);
     }
     
-    // characterType, bodyWoman 팝업이 열릴 때 성별에 따라 리스트 표시
-    if(id === 'characterType' || id === 'bodyWoman') {
+    // characterType, bodyWoman, look 팝업이 열릴 때 성별에 따라 리스트 표시
+    if(id === 'characterType' || id === 'bodyWoman' || id === 'look') {
         var gender = $('[name=gender]').val();
+        
+        // 성별이 선택되지 않은 경우 첫 페이지로 이동
+        if(!gender || (gender !== 'M' && gender !== 'F')) {
+            alert('성별을 먼저 선택해주세요.');
+            changePage('agreePage');
+            return;
+        }
+        
+        var $mView = $popup.find('.m_view_data');
+        var $fView = $popup.find('.f_view_data');
+
+        
         if(gender === 'M') {
-            $popup.find('.m_view_data').css('display', '');
-            $popup.find('.f_view_data').css('display', 'none');
+            $fView.hide();
+            $mView.removeAttr('style').css('display', 'block');
         } else if(gender === 'F') {
-            $popup.find('.m_view_data').css('display', 'none');
-            $popup.find('.f_view_data').css('display', '');
-        } else {
-            // 성별이 선택되지 않은 경우 둘 다 숨김
-            $popup.find('.m_view_data').css('display', 'none');
-            $popup.find('.f_view_data').css('display', 'none');
+            $mView.hide();
+            $fView.removeAttr('style').css('display', 'block');
         }
     }
     
