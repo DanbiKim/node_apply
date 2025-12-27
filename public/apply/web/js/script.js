@@ -71,20 +71,26 @@ $(document).ready(function(){
         var map_name = $('#'+$this.attr('for')).val();
 
         $this.addClass('on');
-        //코드로 저장안하고 한글 지역명으로 저장
         $('#map_my').val($('#'+map_value).val());
         $('#_area').val(map_name);
 
         $.ajax({
-            url: 'https://dapi.kakao.com/v2/local/search/address.json',
-            headers: { 'Authorization': ' KakaoAK 99f16702bdf9695590e5151b3b87c8ed '},
+            url: '/api/kakao-address',  // 변경된 부분!
             type: 'GET',
-            data : {
-                query : map_name ,// 검색어 
+            data: {
+                query: map_name
             },
-            success : function(res){
-                $('#address_x').val(res.documents[0].x);
-                $('#address_y').val(res.documents[0].y);
+            success: function(res){
+                if(res.documents && res.documents.length > 0) {
+                    $('#address_x').val(res.documents[0].x);
+                    $('#address_y').val(res.documents[0].y);
+                } else {
+                    console.warn('주소를 찾을 수 없습니다');
+                }
+            },
+            error: function(err) {
+                console.error('주소 검색 실패:', err);
+                alert('주소 검색에 실패했습니다. 다시 시도해주세요.');
             }
         });
     });
@@ -797,7 +803,7 @@ function conditionValidation(){
         success: function(res) {
             if (res.success) {
                 // 성공 시 완료 페이지로 이동
-                window.location.href = 'complete.html';
+                window.location.href = '/apply/complete.html';
             } else {
                 alert(res.message || '등록에 실패하였습니다.');
                 isSave = false;

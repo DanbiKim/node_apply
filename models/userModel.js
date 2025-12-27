@@ -158,6 +158,8 @@ async function saveSMSLog(logData) {
     const fields = Object.keys(logData);
     const placeholders = fields.map(() => '?').join(', ');
     const values = fields.map(field => logData[field]);
+
+    console.log(fields, placeholders, values);
     
     // await pool.execute(
     //   `INSERT INTO alimtalk_log (${fields.join(', ')}) VALUES (${placeholders})`,
